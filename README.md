@@ -7,3 +7,4 @@ color scheme: https://www.schemecolor.com/summer-vacation.php
 using google font's Beau Rivage for the title text
 using google font's Oswald for the rest of the text.
 
+comment
