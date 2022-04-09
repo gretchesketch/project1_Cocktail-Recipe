@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Oswald:wght@300&display=swap');
+
 * {
     
     text-align: center;
@@ -7,6 +8,7 @@
 body {
     background-image: linear-gradient(315deg, #3D93DD 0%, rgb(188, 224, 213) 100%);
 }
+
 .title {
     font-family: 'Beau Rivage', sans-serif;
     font-size: 200px;
@@ -22,8 +24,8 @@ body {
 }
 
 .description {
-    font-size: 100px;
-    color: #F7DD7D;
+    font-size: 30px;
+    color: #F66867;
 }
 
 img {
@@ -34,6 +36,7 @@ img {
 
 .recipe {
     display: hidden;
+    color: #F66867;
 }
 
 .btn {
