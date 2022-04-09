@@ -1,6 +1,6 @@
 const img = document.querySelector('.img');
 const cycleImages = [
-    './images/bluedrink.jpg', './images/greendrink.jpg', './images/pinkdrink.jpg', './images/orangedrink.jpg'
+    './images/bluedrink.jpg', './images/greendrink.jpg', './images/pinkdrink.jpg', './images/2drinks.jpg', './images/2drinksGreenAndRed.jpg'
 ];
 // carousel
 async function cycle() {
