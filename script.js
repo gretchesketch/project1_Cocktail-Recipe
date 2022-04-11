@@ -28,43 +28,6 @@ var cockTails = document.querySelector("ul");
 var searchBtn = document.querySelector("searchbtn");
 
 
-const searchResultsArray = [
-  {
-    id: 1,
-    Cocktail: "",
-    ingredients: "brown",
-    favorite: 8,
-    pictureUrl:
-    "./images/2drinks.jpg,",
-    imageAlt: "your favorite cocktail"
-  },
-  {
-    id: 2,
-    Cocktail: "",
-   ingredients: "brown",
-    favorite: 8,
-    pictureUrl:
-      "./images/2drinks.jpg,",
-    imageAlt: "your favorite cocktail"
-  },
-  {
-    id: 3,
-   Cocktail: "",
-    ingredients: "brown",
-    favorite: 8,
-    pictureUrl:"./images/2drinks.jpg",
-    imageAlt: "your favorite cocktail"
-  },
-  {
-    id: 4,
-    Cocktail: "",
-    ingredients: "brown",
-    favorite: 8,
-    pictureUrl:"./images/2drinks.jpg,",
-    imageAlt: "your favorite cocktail"
-  }
-];
-
 // function to fetch api
 function getApi(event) {
   var requestUrl = "https://www.thecocktaildb.com/api/json/v2/9973533/recent.php";
