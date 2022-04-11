@@ -1,41 +1,58 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>GitCocktail</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <section>
-        <div class="container">
-            <!--name of application-->
-            <h1 class="title"><span class="git">Git</span>Cocktail</h1>
-            <p class="description">
-                Search for your favorite Cocktail and get the Top 2 results from Google and Cocktail DB (Database)!
-            </p>
-            <!--search bar-->
-            <div>
-                <form>
-                    <!--the search button with materialize.css which adds the paper airplane icon along with a color wave affect-->
-                    <input class="input" type="text" placeholder="Happy Hour starts here..."><span><button class="btn waves-effect waves-light searchbtn" type="submit" name="action">Search
-                        <i class="material-icons right"></i>
-                      </button></span>
-                </form>
-                  </div>
-            <div class="search-results">
-                <div class="item">
-                    <img class="img" alt="">
-                    <div class="flex-container">
-                        <h1 class="recipe">This is a recipe</h1>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <!--name of application-->
+        <h1 class="title"><span class="git">Git</span>Cocktail</h1>
+        <p class="description">
+          Search for your favorite Cocktail and get the Top 2 results from
+          Google and Cocktail DB (Database)!
+        </p>
+        <!--search bar-->
+        <div>
+          <form>
+            <!--the search button with materialize.css which adds the paper airplane icon along with a color wave affect-->
+            <input
+              class="input"
+              type="text"
+              placeholder="Happy Hour starts here..."
+            /><span
+              ><button
+                class="btn waves-effect waves-light searchbtn"
+                type="submit"
+                name="action"
+              >
+                Search
+                <i class="material-icons right"></i></button
+            ></span>
+          </form>
         </div>
+        <div class="search-results">
+          <div class="item">
+            <img class="img" alt="" />
+            <div class="flex-container">
+              <h1 class="recipe">This is a recipe</h1>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- result cards -->
@@ -112,9 +129,9 @@
                 </div>
                 </div>
             </div>
-    </ul>  --> 
+    </ul>  -->
     <footer>Cheers🥂</footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

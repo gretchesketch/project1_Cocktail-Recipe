@@ -24,6 +24,44 @@ cycle();
 var cockTails = document.querySelector('ul');
 var searchBtn = document.querySelector('searchbtn')
 
+
+const searchResultsArray = [
+  {
+    id: 1,
+    Cocktail: "",
+    ingredients: "brown",
+    favorite: 8,
+    pictureUrl:
+      "https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80",
+    imageAlt: "your favorite cocktail"
+  },
+  {
+    id: 2,
+    Cocktail: "",
+   ingredients: "brown",
+    favorite: 8,
+    pictureUrl:
+      "./images/2drinks.jpg,",
+    imageAlt: "your favorite cocktail"
+  },
+  {
+    id: 3,
+   Cocktail: "",
+    ingredients: "brown",
+    favorite: 8,
+    pictureUrl:"./images/2drinks.jpg",
+    imageAlt: "your favorite cocktail"
+  },
+  {
+    id: 4,
+    Cocktail: "",
+    ingredients: "brown",
+    favorite: 8,
+    pictureUrl:"./images/2drinks.jpg,",
+    imageAlt: "your favorite cocktail"
+  }
+];
+
 // function to fetch api
 function getApi() {
     var requestUrl = '';
