@@ -7,6 +7,7 @@ const cycleImages = [
   "./images/2drinks.jpg",
   "./images/2drinksGreenAndRed.jpg",
 ];
+
 // carousel
 async function cycle() {
   img.src = cycleImages[0];
@@ -27,6 +28,7 @@ var cockTails = document.querySelector("ul");
 var searchBtn = document.querySelector("searchbtn");
 
 
+<<<<<<< HEAD
 const searchResultsArray = [
   {
     id: 1,
@@ -63,6 +65,8 @@ const searchResultsArray = [
     imageAlt: "your favorite cocktail"
   }
 ];
+=======
+>>>>>>> 9990f8d1635063f6d8f96000d9bbf15d2ebd0457
 
 // function to fetch api
 function getApi(event) {

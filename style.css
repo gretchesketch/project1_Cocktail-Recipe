@@ -58,3 +58,7 @@ body {
 footer{
     color: #F66867;
 }
+
+li {
+    display: grid;
+}
