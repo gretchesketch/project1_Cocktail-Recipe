@@ -3,6 +3,7 @@ const img = document.querySelector('.img');
 const cycleImages = [
     './images/bluedrink.jpg', './images/greendrink.jpg', './images/pinkdrink.jpg', './images/2drinks.jpg', './images/2drinksGreenAndRed.jpg'
 ];
+
 // carousel
 async function cycle() {
   img.src = cycleImages[0];
