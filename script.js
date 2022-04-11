@@ -26,21 +26,64 @@ cycle();
 var cockTails = document.querySelector("ul");
 var searchBtn = document.querySelector("searchbtn");
 
-// function to fetch api
-function getApi() {
-  var requestUrl = "";
 
+const searchResultsArray = [
+  {
+    id: 1,
+    Cocktail: "",
+    ingredients: "brown",
+    favorite: 8,
+    pictureUrl:
+    "./images/2drinks.jpg,",
+    imageAlt: "your favorite cocktail"
+  },
+  {
+    id: 2,
+    Cocktail: "",
+   ingredients: "brown",
+    favorite: 8,
+    pictureUrl:
+      "./images/2drinks.jpg,",
+    imageAlt: "your favorite cocktail"
+  },
+  {
+    id: 3,
+   Cocktail: "",
+    ingredients: "brown",
+    favorite: 8,
+    pictureUrl:"./images/2drinks.jpg",
+    imageAlt: "your favorite cocktail"
+  },
+  {
+    id: 4,
+    Cocktail: "",
+    ingredients: "brown",
+    favorite: 8,
+    pictureUrl:"./images/2drinks.jpg,",
+    imageAlt: "your favorite cocktail"
+  }
+];
+
+// function to fetch api
+function getApi(event) {
+  var requestUrl = "https://www.thecocktaildb.com/api/json/v2/9973533/recent.php";
+  // var apikey = '9973533'
+  
   fetch(requestUrl)
     .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      for (var i = 0; i < data.length; i++) {
-        var listItem = document.createElement("li");
-        listItem.textContent = data[i].html_url;
-        cockTails.appendChild(listItem);
-      }
-    });
-}
+        return response.json();
+      })
+      .then(function (data) {
+          for (var i = 0; i < data.length; i++) {
+              var listItem = document.createElement("li");
+              listItem.textContent = data[i].html_url;
+              cockTails.appendChild(listItem);
+            }
+        });
 
-searchBtn.addEventListener("click", getApi);
+  event.preventDefault();
+  document.getElementById('img').style.display = 'none';
+}; 
+
+
+searchBtn.addEventListener("click", jason);

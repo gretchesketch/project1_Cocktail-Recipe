@@ -27,10 +27,12 @@ body {
     color: #F66867;
 }
 
-img {
+.img {
     width: 550px;
     height: 650px;
-    padding-top: 50px;
+    /* padding-top: 20px; */
+    border-radius: 10%;
+    box-shadow: 10px 5px 5px #F66867;
 }
 
 .recipe {
@@ -41,6 +43,7 @@ img {
 .btn {
     background-color:#fff;
     color:#F66867;
+    
 }
 
 .material-icons {
@@ -51,6 +54,7 @@ img {
 .btn:hover {
     background-image: linear-gradient(315deg, #3D93DD 0%, rgb(205, 225, 236) 100%);
 }
+
 footer{
     color: #F66867;
 }
