@@ -1,4 +1,5 @@
-# Project 1: GitCocktail
+# [**Project 1: GitCocktail**]()
+
 A web application that searches an api for cocktail recipes.
 https://materializecss.com/
 
