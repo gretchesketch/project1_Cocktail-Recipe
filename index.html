@@ -21,7 +21,7 @@
       <div class="container">
         <!--name of application-->
         <h1 class="title"><span class="git">Git</span>Cocktail</h1>
-        <p class="description">
+        <p class="description mc">
           Search for your favorite Cocktail and get the Top 2 results from
           Google and Cocktail DB (Database)!
         </p>
@@ -29,27 +29,29 @@
         <div>
           <form>
             <!--the search button with materialize.css which adds the paper airplane icon along with a color wave affect-->
+            <label class='label sc' for="search">Search:</label><br>
             <input
-              class="input"
-              type="text"
+              class="input sc"
+              type="search"
               placeholder="Happy Hour starts here..."
             />
             <span
               ><button
-                class="btn waves-effect waves-light searchbtn"
+                class="btn waves-effect waves-light searchbtn sc"
                 type="submit"
-                name="action">
+                name="action"
+              >
                 Search
               </button></span
             >
-            <br/><br/>
+            <br /><br />
           </form>
         </div>
         <div class="search-results">
           <div class="item">
             <img class="img" alt="" />
             <div class="flex-container">
-              <h1 class="recipe">This is a recipe</h1>
+              <h1 class="recipe mc">Here are your results:</h1>
             </div>
           </div>
         </div>
@@ -57,87 +59,90 @@
     </section>
 
     <!-- result cards -->
-    <ul></ul>
+    <div class='container results'>
+      <div>
+        <div class="col s6 push-s6 m6">
+          <div class="card small">
+            <div class="card-image">
+              <img src="" />
+              <span class="card-title">*name of cocktail</span>
+            </div>
+            <div class="card-content">
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup to
+                use effectively.
+              </p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="col s6 push-s6 m6">
+          <div class="card small">
+            <div class="card-image">
+              <img src="" />
+              <span class="card-title">*name of cocktail</span>
+            </div>
+            <div class="card-content">
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup to
+                use effectively.
+              </p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="col s6 push-s6 m6">
+          <div class="card small">
+            <div class="card-image">
+              <img src="" />
+              <span class="card-title">*name of cocktail</span>
+            </div>
+            <div class="card-content">
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup to
+                use effectively.
+              </p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="col s6 push-s6 m6">
+          <div class="card small">
+            <div class="card-image">
+              <img src="" />
+              <span class="card-title">*name of cocktail</span>
+            </div>
+            <div class="card-content">
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup to
+                use effectively.
+              </p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <ul>
-        <li class="results-container">
-            <div class="row">
-                <div class="col s6 push-s6 m6">
-                <div class="card small">
-                    <div class="card-image">
-                    <img src="">
-                    <span class="card-title">Card Title</span>
-                    </div>
-                    <div class="card-content">
-                    <p>I am a very simple card. I am good at containing small bits of information.
-                    I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                    <a href="#">This is a link</a>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </li>
-        <li class="results-container">   
-            <div class="row">
-                <div class="col s6 pull-s6 m6">
-                <div class="card small">
-                    <div class="card-image">
-                    <img src="">
-                    <span class="card-title">Card Title</span>
-                    </div>
-                    <div class="card-content">
-                    <p>I am a very simple card. I am good at containing small bits of information.
-                    I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                    <a href="#">This is a link</a>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </li>
-        <li class="results-container">  
-            <div class="row">
-                <div class="col s6 push-s6 m6">
-                <div class="card small">
-                    <div class="card-image">
-                    <img src="">
-                    <span class="card-title">Card Title</span>
-                    </div>
-                    <div class="card-content">
-                    <p>I am a very simple card. I am good at containing small bits of information.
-                    I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                    <a href="#">This is a link</a>
-                    </div>
-                </div>
-                </div>
-            </div>
-          </li> 
-          <li class="results-container"> 
-            <div class="row">
-                <div class="col s6 pull-s6 m6">
-                <div class="card small">
-                    <div class="card-image">
-                    <img src="">
-                    <span class="card-title">Card Title</span>
-                    </div>
-                    <div class="card-content">
-                    <p>I am a very simple card. I am good at containing small bits of information.
-                    I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                    <a href="#">This is a link</a>
-                    </div>
-                </div>
-                </div>
-            </div>
-          </li>  
-    </ul>
-    <footer>Cheers🥂</footer>
+    <footer class='mc'>Cheers🥂</footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="script.js"></script>
   </body>
