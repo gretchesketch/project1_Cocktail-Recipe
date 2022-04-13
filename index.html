@@ -22,37 +22,33 @@
       <div class="container">
         <!--name of application-->
         <h1 class="title"><span class="git">Git</span>Cocktail</h1>
-        <p class="description mc">
-          Search for your favorite Cocktail and get the Top 2 results from
-          Google and Cocktail DB (Database)!
-        </p>
+        <h2 class="description mc">Search for your favorite Cocktail!</h2>
         <!--search bar-->
-        <div>
-          <form>
-            <!--the search button with materialize.css which adds the paper airplane icon along with a color wave affect-->
-            <label class='label sc' for="search">Search:</label><br>
+          <form class="form row">
+            <!--the search button with materialize.css which adds a color wave affect-->
+            <label class='sc col' id='label-search' for='search'>Search:</label
+            ><br />
             <input
-              class="input sc"
-              type="search"
+              class="input sc col s10"
+              type="text"
               placeholder="Happy Hour starts here..."
             />
-            <span
-              ><button
+            <span>
+              <button
                 class="btn waves-effect waves-light searchbtn sc"
                 type="submit"
                 name="action"
               >
                 Search
-              </button></span
-            >
+              </button>
+            </span>
             <br /><br />
           </form>
-        </div>
         <div class="search-results">
           <div class="item">
             <img class="img" alt="" />
             <div class="flex-container">
-              <h1 class="recipe mc">Here are your results:</h1>
+              <h1 class="results mc">Here are your results:</h1>
             </div>
           </div>
         </div>
@@ -60,90 +56,114 @@
     </section>
 
     <!-- result cards -->
-    <div class='container results'>
-      <div>
-        <div class="col s6 push-s6 m6">
-          <div class="card small">
-            <div class="card-image">
-              <img src="" />
-              <span class="card-title">*name of cocktail</span>
-            </div>
-            <div class="card-content">
-              <p>
-                I am a very simple card. I am good at containing small bits of
-                information. I am convenient because I require little markup to
-                use effectively.
-              </p>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div class="col s6 push-s6 m6">
-          <div class="card small">
-            <div class="card-image">
-              <img src="" />
-              <span class="card-title">*name of cocktail</span>
-            </div>
-            <div class="card-content">
-              <p>
-                I am a very simple card. I am good at containing small bits of
-                information. I am convenient because I require little markup to
-                use effectively.
-              </p>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
+    <div class="container recipes">
+        <div>
+          <div class="col s6 push-s6 m6">
+            <div class="card large">
+              <div class="card-image">
+                <img class="result-img" src="./images/2drinks.jpg" />
+                <span class="card-title" id="cocktail-name"
+                  >*name of cocktail</span
+                >
+              </div>
+              <div class="card-content">
+                <dl>
+                  <dt>Type of Glass:</dt>
+                  <dd class="glass"></dd>
+                  <dt>Ingredients:</dt>
+                  <dd id="ingred"></dd>
+                  <dt>Instruction:</dt>
+                  <dd id="instruct"></dd>
+                </dl>
+              </div>
+              <div class="card-action">
+                <a class="waves-effect waves-light btn favbtn"
+                  ><i class="material-icons left">favorite_border</i>Favorite</a
+                >
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div>
-        <div class="col s6 push-s6 m6">
-          <div class="card small">
-            <div class="card-image">
-              <img src="" />
-              <span class="card-title">*name of cocktail</span>
-            </div>
-            <div class="card-content">
-              <p>
-                I am a very simple card. I am good at containing small bits of
-                information. I am convenient because I require little markup to
-                use effectively.
-              </p>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div class="col s6 push-s6 m6">
-          <div class="card small">
-            <div class="card-image">
-              <img src="" />
-              <span class="card-title">*name of cocktail</span>
-            </div>
-            <div class="card-content">
-              <p>
-                I am a very simple card. I am good at containing small bits of
-                information. I am convenient because I require little markup to
-                use effectively.
-              </p>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
+        <div>
+          <div class="col s6 push-s6 m6">
+            <div class="card large">
+              <div class="card-image">
+                <img class="result-img" src="./images/2drinks.jpg" />
+                <span class="card-title">*name of cocktail</span>
+              </div>
+              <div class="card-content">
+                <dl>
+                  <dt>Type of Glass:</dt>
+                  <dd class="glass"></dd>
+                  <dt>Ingredients:</dt>
+                  <dd id="ingred"></dd>
+                  <dt>Instruction:</dt>
+                  <dd id="instruct"></dd>
+                </dl>
+              </div>
+              <div class="card-action">
+                <a class="waves-effect waves-light btn favbtn"
+                  ><i class="material-icons left">favorite_border</i>Favorite</a
+                >
+              </div>
             </div>
           </div>
         </div>
+        <div>
+          <div class="col s6 push-s6 m6">
+            <div class="card large">
+              <div class="card-image">
+                <img class="result-img" src="./images/2drinks.jpg" />
+                <span class="card-title">*name of cocktail</span>
+              </div>
+              <div class="card-content">
+                <dl>
+                  <dt>Type of Glass:</dt>
+                  <dd class="glass"></dd>
+                  <dt>Ingredients:</dt>
+                  <dd id="ingred"></dd>
+                  <dt>Instruction:</dt>
+                  <dd id="instruct"></dd>
+                </dl>
+              </div>
+              <div class="card-action">
+                <a class="waves-effect waves-light btn favbtn"
+                  ><i class="material-icons left">favorite_border</i>Favorite</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="col s6 push-s6 m6">
+            <div class="card large">
+              <div class="card-image">
+                <img class="result-img" src="./images/2drinks.jpg" />
+                <span class="card-title">*name of cocktail</span>
+              </div>
+              <div class="card-content">
+                <dl>
+                  <dt>Type of Glass:</dt>
+                  <dd class="glass"></dd>
+                  <dt>Ingredients:</dt>
+                  <dd id="ingred"></dd>
+                  <dt>Instruction:</dt>
+                  <dd id="instruct"></dd>
+                </dl>
+              </div>
+              <div class="card-action">
+                <a class="waves-effect waves-light btn favbtn"
+                  ><i class="material-icons left">favorite_border</i>Favorite</a
+                >
+              </div>
+            </div>
+          </div>
       </div>
     </div>
 
-    <footer class='mc'>Cheers🥂</footer>
+    <footer class="mc">
+      <h3>Cheers🥂</h3>
+    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="script.js"></script>
   </body>

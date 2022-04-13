@@ -1,24 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Oswald:wght@300&display=swap');
-* {
+
+/* * {
     text-align: center;
-}
-
-
-
-body {
-    background-image: linear-gradient(315deg, #3D93DD 0%, rgb(188, 224, 213) 100%);
-}
-
-.title {
-    font-family: 'Beau Rivage', sans-serif;
-    font-size: 200px;
-    color: #129c57;
-}
-
-.git {
-    color: white;
-}
-
+} */
 
 .mc {
     color: #F66867;
@@ -29,14 +13,44 @@ body {
     
 }
 
-::placeholder {
+body {
+    background-image: linear-gradient(315deg, #3D93DD 0%, rgb(188, 224, 213) 100%);
+}
+
+.title {
+    font-family: 'Beau Rivage', sans-serif;
+    font-size: 200px;
+    color: #129c57;
+    text-align: center;
+}
+
+.git {
+    color: white;
+}
+
+.description {
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+}
+
+.input,
+.form,
+.results,
+.card-action,
+footer {
+    text-align: center;
+}
+
+.input::placeholder {
     color: #4a8d0c;
 }
 
+.searchbtn {
+    background-color:#fff;
+}
 
-.description {
-    font-size: 30px;
-    font-family: 'Oswald', sans-serif;
+.searchbtn:hover {
+    background-image: linear-gradient(315deg, #3D93DD 0%, rgb(205, 225, 236) 100%);
 }
 
 .img {
@@ -44,39 +58,33 @@ body {
     height: 650px;
     border-radius: 10%;
     box-shadow: 10px 5px 5px #F66867;
-}
-
-.recipe {
-    display: hidden;
-    font-family: 'Oswald', sans-serif;
-}
-
-.btn {
-    background-color:#fff;
-    
-}
-
-.material-icons {
-    background-color: #fff;
-    color: #3D93DD;
-}
-
-.btn:hover {
-    background-image: linear-gradient(315deg, #3D93DD 0%, rgb(205, 225, 236) 100%);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .results {
+    font-family: 'Oswald', sans-serif;
+}
+
+.recipes {
     display: grid;
-    align-items: center;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1em;
 }
 
-.card-title {
-    color: red;
+.result-img {
+    height: 200px;
 }
 
-.results-container {
-    display: grid;
-    
+/* #cocktail-name {
+    color: black;
+} */
+
+.card-content {
+    text-align: left;
+}
+
+.favbtn {
+    background-color: #fc5c5c;
 }
