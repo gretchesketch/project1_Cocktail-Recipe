@@ -1,7 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Oswald:wght@300&display=swap');
 
-* {
+/* * {
     text-align: center;
+} */
+
+.mc {
+    color: #F66867;
+}
+
+.sc {
+    color: #4a8d0c;
+    
 }
 
 body {
@@ -12,42 +21,70 @@ body {
     font-family: 'Beau Rivage', sans-serif;
     font-size: 200px;
     color: #129c57;
+    text-align: center;
 }
 
 .git {
     color: white;
 }
 
-.input {
-    background-color: black;
-}
-
 .description {
-    font-size: 30px;
-    color: #F66867;
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
 }
 
-img {
+.input,
+.form,
+.results,
+.card-action,
+footer {
+    text-align: center;
+}
+
+.input::placeholder {
+    color: #4a8d0c;
+}
+
+.searchbtn {
+    background-color:#fff;
+}
+
+.searchbtn:hover {
+    background-image: linear-gradient(315deg, #3D93DD 0%, rgb(205, 225, 236) 100%);
+}
+
+.img {
     width: 550px;
     height: 650px;
-    padding-top: 50px;
+    border-radius: 10%;
+    box-shadow: 10px 5px 5px #F66867;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.recipe {
-    display: hidden;
-    color: #F66867;
+.results {
+    font-family: 'Oswald', sans-serif;
 }
 
-.btn {
-    background-color:#fff;
-    color:#F66867;
+.recipes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1em;
 }
 
-.material-icons {
-    background-color: #fff;
-    color: #3D93DD;
+.result-img {
+    height: 200px;
 }
 
-.btn:hover {
-    background-image: linear-gradient(315deg, #3D93DD 0%, rgb(205, 225, 236) 100%);
+/* #cocktail-name {
+    color: black;
+} */
+
+.card-content {
+    text-align: left;
+}
+
+.favbtn {
+    background-color: #fc5c5c;
 }
