@@ -112,9 +112,17 @@ var ingredients = document.getElementById("ingred")
 var instructions = document.getElementById("instruct")
 
 var glass = strGlass.glass
-var temp = day.temp.day;
-var windSpeed = day.wind_speed;
-var humidity = day.humidity;
+var instructions = strInstructionsDE.instructions
+var ingredients = [
+    {strIngredient1},
+    {strIngredient2},
+    {strIngredient3},
+    {strIngredient4},
+    {strIngredient5},
+    {strIngredient6},
+    {strIngredient7},
+    {strIngredient8}
+];
 
 
 //fetching random cocktail
