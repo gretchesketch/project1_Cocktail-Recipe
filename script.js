@@ -178,6 +178,13 @@ fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
 // }
 
 
+
+
+
+
+
+
+
   //drink charactersists that showed up in the console
 // idDrink: "12528"
 // strAlcoholic: "Alcoholic"
