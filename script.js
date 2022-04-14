@@ -141,15 +141,44 @@ fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
   })
   .catch((error) => console.error("FETCH ERROR:", error));
 
+  //display function
   function displayCocktail(data) {
     const cocktail = data.drinks[2];
     const cocktailDiv = document.getElementById("cocktail"); 
   }   
 
+  //exporting data
+//const cocktailName = cocktail.strDrink;
+// const heading = document.createElement("h1");
+// heading.innerHTML = cocktailName;
+// cocktailDiv.appendChild(heading);
 
 
 
-  //dateModified: "2016-08-28 18:35:32"
+//looping through ingredients to display on the slots that are not null
+// const cocktailIngredients = document.createElement("ul");
+// cocktailDiv.appendChild(cocktailIngredients);  
+
+// const getIngredients = Object.keys(cocktail)
+//   .filter(function (ingredient) {
+//     return ingredient.indexOf("strIngredient") == 0;
+//   })
+//   .reduce(function (ingredients, ingredient) {
+//     if (cocktail[ingredient] != null) {
+//       ingredients[ingredient] = cocktail[ingredient];
+//     }
+//     return ingredients;
+//   }, {});
+
+// for (let key in getIngredients) {
+//   let value = getIngredients[key];
+//   listItem = document.createElement("li");
+//   listItem.innerHTML = value;
+//   cocktailIngredients.appendChild(listItem);
+// }
+
+
+  //drink charactersists that showed up in the console
 // idDrink: "12528"
 // strAlcoholic: "Alcoholic"
 // strCategory: "Ordinary Drink"
