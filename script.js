@@ -111,18 +111,21 @@ var glass = document.getElementById("glass")
 var ingredients = document.getElementById("ingred")
 var instructions = document.getElementById("instruct")
 
-var glass = strGlass.glass
-var instructions = strInstructionsDE.instructions
-var ingredients = [
-    {strIngredient1},
-    {strIngredient2},
-    {strIngredient3},
-    {strIngredient4},
-    {strIngredient5},
-    {strIngredient6},
-    {strIngredient7},
-    {strIngredient8}
-];
+// var glass = strGlass.glass
+// var instructions = strInstructionsDE.instructions
+// var ingredients = [
+//     {strIngredient1},
+//     {strIngredient2},
+//     {strIngredient3},
+//     {strIngredient4},
+//     {strIngredient5},
+//     {strIngredient6},
+//     {strIngredient7},
+//     {strIngredient8}
+// ];
+
+
+// www.thecocktaildb.com/api/json/v1/1/filter.php?i=/search.php?i=/search.php?s
 
 
 //fetching random cocktail
