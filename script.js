@@ -102,29 +102,8 @@ const searchResultsArray = [
 // function jason(event) {
 //   event.preventDefault();
 //   document.querySelector('.description').style.display = 'none';
-
 // }
 
-// function start() {
-//   // 2. Initialize the JavaScript client library.
-//   gapi.client.init({
-//     'apiKey': 'AIzaSyAHn5BUjeKUprcZG2E8m24ynnZIT2avTPk',
-//     // Your API key will be automatically added to the Discovery Document URLs.
-//     'discoveryDocs': ['https://people.googleapis.com/$discovery/rest'],
-//     // clientId and scope are optional if auth is not required.
-//   }).then(function() {
-//     // 3. Initialize and make the API request.
-//     return gapi.client.people.people.get({
-//       'resourceName': 'people/me',
-//       'requestMask.includeField': 'person.names'
-//     });
-//   }).then(function(response) {
-//     console.log(response.result);
-//   }, function(reason) {
-//     console.log('Error: ' + reason.result.error.message);
-//   });
-// // 1. Load the JavaScript client library.
-// gapi.load('client', start)};
 
 
 fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
@@ -143,6 +122,5 @@ fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
 
   function displayCocktail(data) {
     const cocktail = data.drinks[0];
-    const cocktailDiv = document.getElementById("cocktail");
-    ...  
+    const cocktailDiv = document.getElementById("cocktail"); 
   }   
