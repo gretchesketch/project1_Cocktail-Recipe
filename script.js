@@ -25,6 +25,7 @@ async function cycle() {
 cycle();
 
   console.log("after carousel")
+
 var cockTails = document.querySelector("ul");
 var searchBtn = document.querySelector("searchbtn");
 
@@ -67,6 +68,7 @@ const searchResultsArray = [
   }
 ];
 
+<<<<<<< HEAD
 
 
 // function to fetch api
@@ -93,7 +95,10 @@ const searchResultsArray = [
 
 //searchBtn.addEventListener("click", jason);
 
+=======
+>>>>>>> d5cfd053b569182ee9a7cf6791e0dac150e2bbc2
 
+console.log("after search results array")
 
 /////////////////////////////////////////////////////////////////////
 //Gretchen experiementing with fetch
@@ -106,57 +111,66 @@ const searchResultsArray = [
 //   document.querySelector('.description').style.display = 'none';
 // }
 
-var baseUrl = "https://www.thecocktaildb.com/api/json/v1/1/";
+var baseUrl = "https://www.thecocktaildb.com/api/json/v2/9973533/";
 var apiKey = "9973533";
+
+var searchInput = document.getElementsByClassName("input")
+var searchBtn = document.getElementsByClassName("searchBtn")
 
 var glass = document.getElementById("glass")
 var ingredients = document.getElementById("ingred")
 var instructions = document.getElementById("instruct")
 
-// var glass = strGlass.glass
-// var instructions = strInstructionsDE.instructions
-// var ingredients = [
-//     {strIngredient1},
-//     {strIngredient2},
-//     {strIngredient3},
-//     {strIngredient4},
-//     {strIngredient5},
-//     {strIngredient6},
-//     {strIngredient7},
-//     {strIngredient8}
-// ];
+var glass = strGlass.glass
+var instructions = strInstructionsDE.instructions
+var ingredients = [
+    {strIngredient1},
+    {strIngredient2},
+    {strIngredient3},
+    {strIngredient4},
+    {strIngredient5},
+    {strIngredient6},
+    {strIngredient7},
+    {strIngredient8}
+ ];
 
 
-// www.thecocktaildb.com/api/json/v1/1/filter.php?i=/search.php?i=/search.php?s
+
+
 
 
 //fetching random cocktail
 // this is just a sample currently: revise later
-fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
-  .then((response) => {
+searchBtn.addEventListener("submit", fetch("https://www.thecocktaildb.com/api/json/v2/9973533/random.php ")
+.then((response) => {
     if (response.ok) {
-      return response.json();
+        return response.json();
     } else {
-      throw new Error("NETWORK RESPONSE ERROR");
+        throw new Error("NETWORK RESPONSE ERROR");
     }
-  })
-  .then(data => {
-    console.log(data);
-    displayCocktail(data)
-  })
-  .catch((error) => console.error("FETCH ERROR:", error));
+})
+.then(data => {
+  console.log(data);
+  displayCocktail(data)
+})
 
+  .catch((error) => console.error("FETCH ERROR:", error)));
+
+  
+  
+  
+  
   //display function
   function displayCocktail(data) {
     const cocktail = data.drinks[2];
     const cocktailDiv = document.getElementById("cocktail"); 
-  }   
+  };
 
   //exporting data
-//const cocktailName = cocktail.strDrink;
-// const heading = document.createElement("h1");
-// heading.innerHTML = cocktailName;
-// cocktailDiv.appendChild(heading);
+// const cocktailName = cockTails.strDrink;
+// drinkname.innerHTML = cocktailName;
+// cocktailDiv.appendChild(span);
+
 
 
 
