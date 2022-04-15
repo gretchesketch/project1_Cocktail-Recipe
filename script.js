@@ -68,35 +68,6 @@ const searchResultsArray = [
   }
 ];
 
-<<<<<<< HEAD
-
-
-// function to fetch api
-// function getApi(event) {
-//   var requestUrl = "https://www.thecocktaildb.com/api/json/v2/9973533/recent.php";
-  // var apikey = '9973533'
-  
-//   fetch(requestUrl)
-//     .then(function (response) {
-//         return response.json();
-//       })
-//       .then(function (data) {
-//           for (var i = 0; i < data.length; i++) {
-//               var listItem = document.createElement("li");
-//               listItem.textContent = data[i].html_url;
-//               cockTails.appendChild(listItem);
-//             }
-//         });
-
-//   event.preventDefault();
-//   document.getElementById('img').style.display = 'none';
-// }; 
-
-
-//searchBtn.addEventListener("click", jason);
-
-=======
->>>>>>> d5cfd053b569182ee9a7cf6791e0dac150e2bbc2
 
 console.log("after search results array")
 
@@ -121,18 +92,18 @@ var glass = document.getElementById("glass")
 var ingredients = document.getElementById("ingred")
 var instructions = document.getElementById("instruct")
 
-var glass = strGlass.glass
-var instructions = strInstructionsDE.instructions
-var ingredients = [
-    {strIngredient1},
-    {strIngredient2},
-    {strIngredient3},
-    {strIngredient4},
-    {strIngredient5},
-    {strIngredient6},
-    {strIngredient7},
-    {strIngredient8}
- ];
+// var glass = [strGlass];
+// var instructions = strInstructionsDE.instructions
+// var ingredients = [
+//     {strIngredient1},
+//     {strIngredient2},
+//     {strIngredient3},
+//     {strIngredient4},
+//     {strIngredient5},
+//     {strIngredient6},
+//     {strIngredient7},
+//     {strIngredient8}
+//  ];
 
 
 
@@ -141,7 +112,7 @@ var ingredients = [
 
 //fetching random cocktail
 // this is just a sample currently: revise later
-searchBtn.addEventListener("submit", fetch("https://www.thecocktaildb.com/api/json/v2/9973533/random.php ")
+searchBtn.addEventListener("click", fetch("https://www.thecocktaildb.com/api/json/v2/9973533/random.php ")
 .then((response) => {
     if (response.ok) {
         return response.json();
@@ -162,39 +133,39 @@ searchBtn.addEventListener("submit", fetch("https://www.thecocktaildb.com/api/js
   
   //display function
   function displayCocktail(data) {
-    const cocktail = data.drinks[2];
-    const cocktailDiv = document.getElementById("cocktail"); 
+    const cocktail = data.drinks;
+    const cocktailDiv = document.getElementById("card-content"); 
   };
 
   //exporting data
-// const cocktailName = cockTails.strDrink;
-// drinkname.innerHTML = cocktailName;
-// cocktailDiv.appendChild(span);
+const cocktailName = cockTails.strDrink;
+drinkname.innerHTML = cocktailName;
+cocktailDiv.appendChild(span);
 
 
 
 
 //looping through ingredients to display on the slots that are not null
-// const cocktailIngredients = document.createElement("ul");
-// cocktailDiv.appendChild(cocktailIngredients);  
+const cocktailIngredients = document.createElement("ul");
+cocktailDiv.appendChild(cocktailIngredients);  
 
-// const getIngredients = Object.keys(cocktail)
-//   .filter(function (ingredient) {
-//     return ingredient.indexOf("strIngredient") == 0;
-//   })
-//   .reduce(function (ingredients, ingredient) {
-//     if (cocktail[ingredient] != null) {
-//       ingredients[ingredient] = cocktail[ingredient];
-//     }
-//     return ingredients;
-//   }, {});
+const getIngredients = Object.keys(cocktail)
+  .filter(function (ingredient) {
+    return ingredient.indexOf("strIngredient") == 0;
+  })
+  .reduce(function (ingredients, ingredient) {
+    if (cocktail[ingredient] != null) {
+      ingredients[ingredient] = cocktail[ingredient];
+    }
+    return ingredients;
+  }, {});
 
-// for (let key in getIngredients) {
-//   let value = getIngredients[key];
-//   listItem = document.createElement("li");
-//   listItem.innerHTML = value;
-//   cocktailIngredients.appendChild(listItem);
-// }
+for (let key in getIngredients) {
+  let value = getIngredients[key];
+  listItem = document.createElement("li");
+  listItem.innerHTML = value;
+  cocktailIngredients.appendChild(listItem);
+}
 
 
 
