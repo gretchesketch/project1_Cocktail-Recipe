@@ -1,5 +1,5 @@
 // images display on landing page
-const img = document.querySelector(".img");
+const img = document.querySelector(".carousel-img");
 const cycleImages = [
   "./images/bluedrink.jpg",
   "./images/greendrink.jpg",
@@ -66,6 +66,8 @@ const searchResultsArray = [
     imageAlt: "your favorite cocktail"
   }
 ];
+
+
 
 // function to fetch api
 // function getApi(event) {
@@ -239,3 +241,9 @@ fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
 // strMeasure15: null
 // strTags: null
 // strVideo: null
+
+function changeIcon() {
+  if (document.getElementById('favbtn').textContent == 'favorite_border') document.getElementById('favbtn').textContent = 'favorite';
+  else if (document.getElementById('favbtn').textContent = 'favorite') document.getElementById('favbtn').textContent = 'favorite_border';
+};
+
