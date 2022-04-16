@@ -1,7 +1,3 @@
-fetch("https://www.thecocktaildb.com/api/json/v2/9973533/random.php")
-    .then((response) => response.json())
-    .then((data) => console.log(data));
-
 // images display on landing page
 const img = document.querySelector(".carousel-img");
 const cycleImages = [
@@ -106,94 +102,18 @@ function displayCocktail(event) {
     event.preventDefault()
   fetch("https://www.thecocktaildb.com/api/json/v2/9973533/random.php")
     .then((response) => response.json())
-    .then((data) => displayCocktail(data));
-  return;
-  const cocktails = data.drinks;
-  console.log("cocktails:", cocktails);
-  return;
-  const cocktailDiv = document.getElementById("card-content");
-  //exporting data
-  const cocktailName = cocktails.strDrink;
-  drinkname.innerHTML = cocktailName;
-  cocktail.appendChild(span);
-  //looping through ingredients to display on the slots that are not null
-  const cocktailIngredients = document.getElementById("ingred1");
-  cocktailDiv.appendChild(cocktailIngredients);
-
-  getIngredients = Object.keys(cocktail)
-    .filter(function (ingredient) {
-      return ingredient.indexOf("strIngredient") == 0;
+    .then((data) => {
+        const cocktails = data.drinks;
+        console.log("cocktails:", cocktails);
+        return;
     })
-    .reduce(function (ingredients, ingredient) {
-      if (cocktails[ingredient] != "null") {
-        ingredients[ingredient] = cocktail[ingredient];
-      }
-      return ingredients;
-    }, {});
+};
+ 
 
-  for (let key in getIngredients) {
-    let value = getIngredients[key];
-    listItem = document.createElement("li");
-    listItem.innerText = value;
-    cocktailIngredients.appendChild(listItem);
-  }
-}
-
-//drink charactersists that showed up in the console
-// idDrink: "12528"
-// strAlcoholic: "Alcoholic"
-// strCategory: "Ordinary Drink"
-// strCreativeCommonsConfirmed: "No"
-// strDrink: "White Russian"
-// strDrinkAlternate: null
-// strDrinkThumb: "https://www.thecocktaildb.com/images/media/drink/vsrupw1472405732.jpg"
-// strGlass: "Old-fashioned glass"
-// strIBA: null
-// strImageAttribution: null
-// strImageSource: null
-// strIngredient1: "Vodka"
-// strIngredient2: "Coffee liqueur"
-// strIngredient3: "Light cream"
-// strIngredient4: null
-// strIngredient5: null
-// strIngredient6: null
-// strIngredient7: null
-// strIngredient8: null
-// strIngredient9: null
-// strIngredient10: null
-// strIngredient11: null
-// strIngredient12: null
-// strIngredient13: null
-// strIngredient14: null
-// strIngredient15: null
-// strInstructions: "Pour vodka and coffee liqueur over ice cubes in an old-fashioned glass. Fill with light cream and serve."
-// strInstructionsDE: "Gießen Sie Wodka und Kaffeelikör über Eiswürfel in einem old-fashioned Glas. Mit Sahne auffüllen und servieren."
-// strInstructionsES: null
-// strInstructionsFR: null
-// strInstructionsIT: "Versare la vodka e il liquore al caffè sui cubetti di ghiaccio in un bicchiere vecchio stile.Farcite con crema leggera e servite."
-// strInstructionsZH-HANS: null
-// strInstructionsZH-HANT: null
-// strMeasure1: "2 oz "
-// strMeasure2: "1 oz "
-// strMeasure3: null
-// strMeasure4: null
-// strMeasure5: null
-// strMeasure6: null
-// strMeasure7: null
-// strMeasure8: null
-// strMeasure9: null
-// strMeasure10: null
-// strMeasure11: null
-// strMeasure12: null
-// strMeasure13: null
-// strMeasure14: null
-// strMeasure15: null
-// strTags: null
-// strVideo: null
 
 function changeIcon() {
   if (document.getElementById("favbtn").textContent == "favorite_border")
     document.getElementById("favbtn").textContent = "favorite";
   else if ((document.getElementById("favbtn").textContent = "favorite"))
     document.getElementById("favbtn").textContent = "favorite_border";
-}
+};
