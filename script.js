@@ -1,3 +1,7 @@
+fetch("https://www.thecocktaildb.com/api/json/v2/9973533/random.php")
+    .then((response) => response.json())
+    .then((data) => console.log(data));
+
 // images display on landing page
 const img = document.querySelector(".carousel-img");
 const cycleImages = [
@@ -24,11 +28,11 @@ async function cycle() {
 }
 cycle();
 
-  console.log("after carousel")
+console.log("after carousel");
 
 var cockTails = document.querySelector("ul");
 
-  console.log("after vars on line 28 and 29")
+console.log("after vars on line 28 and 29");
 
 const searchResultsArray = [
   {
@@ -36,60 +40,48 @@ const searchResultsArray = [
     Cocktail: "",
     ingredients: "brown",
     favorite: 8,
-    pictureUrl:
-    "./images/2drinks.jpg,",
-    imageAlt: "your favorite cocktail"
+    pictureUrl: "./images/2drinks.jpg,",
+    imageAlt: "your favorite cocktail",
   },
   {
     id: 2,
     Cocktail: "",
-   ingredients: "brown",
+    ingredients: "brown",
     favorite: 8,
-    pictureUrl:
-      "./images/2drinks.jpg,",
-    imageAlt: "your favorite cocktail"
+    pictureUrl: "./images/2drinks.jpg,",
+    imageAlt: "your favorite cocktail",
   },
   {
     id: 3,
-   Cocktail: "",
+    Cocktail: "",
     ingredients: "brown",
     favorite: 8,
-    pictureUrl:"./images/2drinks.jpg",
-    imageAlt: "your favorite cocktail"
+    pictureUrl: "./images/2drinks.jpg",
+    imageAlt: "your favorite cocktail",
   },
   {
     id: 4,
     Cocktail: "",
     ingredients: "brown",
     favorite: 8,
-    pictureUrl:"./images/2drinks.jpg,",
-    imageAlt: "your favorite cocktail"
-  }
+    pictureUrl: "./images/2drinks.jpg,",
+    imageAlt: "your favorite cocktail",
+  },
 ];
 
-
-console.log("after search results array")
+console.log("after search results array");
 
 /////////////////////////////////////////////////////////////////////
-//Gretchen experiementing with fetch
-
-// var googleApiKey = (AIzaSyAHn5BUjeKUprcZG2E8m24ynnZIT2avTPk)
-// var googleUrl = 
-
-// function jason(event) {
-//   event.preventDefault();
-//   document.querySelector('.description').style.display = 'none';
-// }
 
 var baseUrl = "https://www.thecocktaildb.com/api/json/v2/9973533/";
 var apiKey = "9973533";
 
-var searchInput = document.getElementsByClassName("input")
-var searchBtn = document.getElementById("searchBtn")
+var searchInput = document.getElementsByClassName("input");
+var searchBtn = document.getElementById("searchBtn");
 
-var glass = document.getElementById("glass")
-var ingredients = document.getElementById("ingred")
-var instructions = document.getElementById("instruct")
+var glass = document.getElementById("glass");
+var ingredients = document.getElementById("ingred");
+var instructions = document.getElementById("instruct");
 
 // var glass = [strGlass];
 // var instructions = strInstructionsDE.instructions
@@ -104,82 +96,50 @@ var instructions = document.getElementById("instruct")
 //     {strIngredient8}
 //  ];
 
-
-
-
-  
-
-console.log(searchBtn)
+console.log(searchBtn);
 //fetching random cocktail
-searchBtn.addEventListener("click", function() {
-    console.log(fetch("https://www.thecocktaildb.com/api/json/v2/9973533/random.php"))
-fetch("https://www.thecocktaildb.com/api/json/v2/9973533/random.php")
+searchBtn.addEventListener("click", displayCocktail);
 
-.then((response) => {
-    if (response.ok) {
-        return response.json();
-    } else {
-        throw new Error("NETWORK RESPONSE ERROR");
-    }
-})
-.then(data => {
-  console.log(data);
-  displayCocktail(data)
-})
-
-  .catch((error) => console.error("FETCH ERROR:", error));
-});
-
-
-  
-  
-  
-  
-  //display function
-  function displayCocktail(data) {
-    const cocktail = data.drinks;
-    const cocktailDiv = document.getElementById("card-content"); 
-  };
-
+//display function
+function displayCocktail(event) {
+    console.log(event)
+    event.preventDefault()
+  fetch("https://www.thecocktaildb.com/api/json/v2/9973533/random.php")
+    .then((response) => response.json())
+    .then((data) => displayCocktail(data));
+  return;
+  const cocktails = data.drinks;
+  console.log("cocktails:", cocktails);
+  return;
+  const cocktailDiv = document.getElementById("card-content");
   //exporting data
-const cocktailName = cockTails.strDrink;
-drinkname.innerHTML = cocktailName;
-cocktailDiv.appendChild(span);
+  const cocktailName = cocktails.strDrink;
+  drinkname.innerHTML = cocktailName;
+  cocktail.appendChild(span);
+  //looping through ingredients to display on the slots that are not null
+  const cocktailIngredients = document.getElementById("ingred1");
+  cocktailDiv.appendChild(cocktailIngredients);
 
+  getIngredients = Object.keys(cocktail)
+    .filter(function (ingredient) {
+      return ingredient.indexOf("strIngredient") == 0;
+    })
+    .reduce(function (ingredients, ingredient) {
+      if (cocktails[ingredient] != "null") {
+        ingredients[ingredient] = cocktail[ingredient];
+      }
+      return ingredients;
+    }, {});
 
-
-
-//looping through ingredients to display on the slots that are not null
-const cocktailIngredients = document.getElementById("ingred1");
-cocktailDiv.appendChild(cocktailIngredients);  
-
-getIngredients = Object.keys(cocktail)
-  .filter(function (ingredient) {
-    return ingredient.indexOf("strIngredient") == 0;
-  })
-  .reduce(function (ingredients, ingredient) {
-    if (cocktail[ingredient] != "null") {
-      ingredients[ingredient] = cocktail[ingredient];
-    }
-    return ingredients;
-  }, {});
-
-for (let key in getIngredients) {
-  let value = getIngredients[key];
-  listItem = document.createElement("li");
-  listItem.innerText = value;
-  cocktailIngredients.appendChild(listItem);
+  for (let key in getIngredients) {
+    let value = getIngredients[key];
+    listItem = document.createElement("li");
+    listItem.innerText = value;
+    cocktailIngredients.appendChild(listItem);
+  }
 }
 
-
-
-
-
-
-
-
-
-  //drink charactersists that showed up in the console
+//drink charactersists that showed up in the console
 // idDrink: "12528"
 // strAlcoholic: "Alcoholic"
 // strCategory: "Ordinary Drink"
@@ -232,7 +192,8 @@ for (let key in getIngredients) {
 // strVideo: null
 
 function changeIcon() {
-  if (document.getElementById('favbtn').textContent == 'favorite_border') document.getElementById('favbtn').textContent = 'favorite';
-  else if (document.getElementById('favbtn').textContent = 'favorite') document.getElementById('favbtn').textContent = 'favorite_border';
-};
-
+  if (document.getElementById("favbtn").textContent == "favorite_border")
+    document.getElementById("favbtn").textContent = "favorite";
+  else if ((document.getElementById("favbtn").textContent = "favorite"))
+    document.getElementById("favbtn").textContent = "favorite_border";
+}
