@@ -18,35 +18,36 @@
   </head>
 
   <body>
-    <section>
-      <div class="container">
-        <!--name of application-->
-        <h1 class="title"><span class="git">Git</span>Cocktail</h1>
-        <h2 class="description mc">Search for your favorite Cocktail!</h2>
-        <!--search bar-->
-          <form class="form row">
-            <!--the search button with materialize.css which adds a color wave affect-->
-            <label class='sc col' id='label-search' for='search'>Search:</label
-            ><br />
-            <input
-              class="input sc col s10"
-              type="text"
-              placeholder="Happy Hour starts here..."
-            />
-            <span>
-              <button
-                class="btn waves-effect waves-light searchBtn "
-                type="submit"
-                name="action"
-              >
-                Search
-              </button>
-            </span>
-            <br /><br />
-          </form>
-          <img class="carousel-img" alt="" />
-        </div>
-      </section>
+      <section>
+          <div class="container">
+            <!--name of application-->
+            <h1 class="title"><span class="git">Git</span>Cocktail</h1>
+            <h2 class="description mc">Search for your favorite Cocktail!</h2>
+            <!--search bar-->
+              <form class="form row">
+                <!--the search button with materialize.css which adds a color wave affect-->
+                <label class='sc col' id='label-search' for='search'>Search:</label
+                ><br />
+                <input
+                  class="input sc col s10"
+                  type="text"
+                  placeholder="Happy Hour starts here..."
+                />
+                  <span>
+                    <button
+                      class="btn waves-effect waves-light "
+                      id="searchBtn"
+                      type="submit"
+                      name="action"
+                    >
+                      Search
+                    </button>
+                  </span>
+                <br /><br />
+              </form>
+              <img class="carousel-img" alt="" />
+            </div>
+        </section>
       
       <!-- result cards -->
       <div class="search-results">
@@ -61,12 +62,12 @@
         
           <div class="col s6 push-s6 m6 cocktail1">
             <div class="card large">
-              <div class="card-image">
-                <img class="result-img" src="./images/2drinks.jpg" />
-                <span class="card-title" id="cocktail-name"
-                  >*name of cocktail</span
-                >
-              </div>
+                <div class="card-image">
+                  <img class="result-img" src="./images/2drinks.jpg" />
+                  <span class="card-title" id="cocktail-name"
+                    >*name of cocktail</span
+                  >
+                </div>
               <div class="card-content">
                 <dl>
                   <dt>Type of Glass:</dt>

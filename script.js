@@ -27,7 +27,6 @@ cycle();
   console.log("after carousel")
 
 var cockTails = document.querySelector("ul");
-var searchBtn = document.querySelector("searchbtn");
 
   console.log("after vars on line 28 and 29")
 
@@ -86,7 +85,7 @@ var baseUrl = "https://www.thecocktaildb.com/api/json/v2/9973533/";
 var apiKey = "9973533";
 
 var searchInput = document.getElementsByClassName("input")
-var searchBtn = document.getElementsByClassName("searchBtn")
+var searchBtn = document.getElementById("searchBtn")
 
 var glass = document.getElementById("glass")
 var ingredients = document.getElementById("ingred")
@@ -108,11 +107,14 @@ var instructions = document.getElementById("instruct")
 
 
 
+  
 
-
+console.log(searchBtn)
 //fetching random cocktail
-// this is just a sample currently: revise later
-searchBtn.addEventListener("click", fetch("https://www.thecocktaildb.com/api/json/v2/9973533/random.php ")
+searchBtn.addEventListener("click", function() {
+    console.log(fetch("https://www.thecocktaildb.com/api/json/v2/9973533/random.php"))
+fetch("https://www.thecocktaildb.com/api/json/v2/9973533/random.php")
+
 .then((response) => {
     if (response.ok) {
         return response.json();
@@ -125,7 +127,9 @@ searchBtn.addEventListener("click", fetch("https://www.thecocktaildb.com/api/jso
   displayCocktail(data)
 })
 
-  .catch((error) => console.error("FETCH ERROR:", error)));
+  .catch((error) => console.error("FETCH ERROR:", error));
+});
+
 
   
   
@@ -146,15 +150,15 @@ cocktailDiv.appendChild(span);
 
 
 //looping through ingredients to display on the slots that are not null
-const cocktailIngredients = document.createElement("ul");
+const cocktailIngredients = document.getElementById("ingred1");
 cocktailDiv.appendChild(cocktailIngredients);  
 
-const getIngredients = Object.keys(cocktail)
+getIngredients = Object.keys(cocktail)
   .filter(function (ingredient) {
     return ingredient.indexOf("strIngredient") == 0;
   })
   .reduce(function (ingredients, ingredient) {
-    if (cocktail[ingredient] != null) {
+    if (cocktail[ingredient] != "null") {
       ingredients[ingredient] = cocktail[ingredient];
     }
     return ingredients;
@@ -163,7 +167,7 @@ const getIngredients = Object.keys(cocktail)
 for (let key in getIngredients) {
   let value = getIngredients[key];
   listItem = document.createElement("li");
-  listItem.innerHTML = value;
+  listItem.innerText = value;
   cocktailIngredients.appendChild(listItem);
 }
 
