@@ -79,7 +79,7 @@ var searchBtn = document.getElementById("searchBtn");
 var glass = document.getElementById("glass");
 var ingredients = document.getElementById("ingred");
 var instructions = document.getElementById("instruct");
-var cocktailSearch = document.querySelector('cocktailSearch'); // input value from user
+var cocktailSearch = document.querySelector("cocktailSearch"); // input value from user
 // var cocktailContainerEl = document.querySelector('cocktail')
 
 /////////////////// sample code from activity
@@ -120,7 +120,7 @@ var cocktailSearch = document.querySelector('cocktailSearch'); // input value fr
 //////////////////
 searchBtn.addEventListener("click", function (event) {
   event.preventDefault();
-  fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php/')
+  fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php/")
     .then((response) => {
       if (response.ok) {
         return response.json();
@@ -147,7 +147,7 @@ function displayCocktail(data) {
   cocktailDiv.appendChild(cocktailImg);
   const cocktailIngredients = document.createElement("dl");
   cocktailDiv.appendChild(cocktailIngredients);
-  const cocktailMeasures = document.createElement
+  const cocktailMeasures = document.createElement;
   const getIngredients = Object.keys(cocktail)
 
     .filter(function (ingredient) {
@@ -166,5 +166,4 @@ function displayCocktail(data) {
     listItem.innerHTML = value;
     cocktailIngredients.appendChild(listItem);
   }
-
 }

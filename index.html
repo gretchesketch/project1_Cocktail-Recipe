@@ -23,48 +23,48 @@
   </head>
 
   <body>
-      <section>
-          <div class="container">
-            <!--name of application-->
-            <h1 class="title"><span class="git">Git</span>Cocktail</h1>
-            <h2 class="description mc">Search for your favorite Cocktail!</h2>
-            <!--search bar-->
-              <form class="cocktail-form row">
-                <!--the search button with materialize.css which adds a color wave affect-->
-                <label class='sc col' id='label-search' for='search'>Search:</label
-                ><br />
-                <input
-                  class="input sc col s10 cocktailSearch"
-                  type="text"
-                  placeholder="Happy Hour starts here..."
-                />
-                  <span>
-                    <button
-                      class="btn waves-effect waves-light "
-                      id="searchBtn"
-                      name="action"
-                    >
-                      Search
-                    </button>
-                  </span>
-                <br /><br />
-              </form>
-              <img class="carousel-img" alt="" />
-            </div>
-        </section>
-      
-      <!-- result cards -->
-      <div class="search-results">
-        <div class="item">
-          <div class="flex-container">
-            <h1 class="results mc">Here are your results:</h1>
-          </div>
+    <section>
+      <div class="container">
+        <!--name of application-->
+        <h1 class="title"><span class="git">Git</span>Cocktail</h1>
+        <h2 class="description mc">Search for your favorite Cocktail!</h2>
+        <!--search bar-->
+        <form class="cocktail-form row">
+          <!--the search button with materialize.css which adds a color wave affect-->
+          <label class="sc col" id="label-search" for="search">Search:</label
+          ><br />
+          <input
+            class="input sc col s10 cocktailSearch"
+            type="text"
+            placeholder="Happy Hour starts here..."
+          />
+          <span>
+            <button
+              class="btn waves-effect waves-light"
+              id="searchBtn"
+              name="action"
+            >
+              Search
+            </button>
+          </span>
+          <br /><br />
+        </form>
+        <img class="carousel-img" alt="" />
+      </div>
+    </section>
+
+    <!-- result cards -->
+    <div class="search-results">
+      <div class="item">
+        <div class="flex-container">
+          <h1 class="results mc">Here are your results:</h1>
         </div>
       </div>
+    </div>
 
-      <div class="container recipes ">
-        <div id='cocktail'></div>
-          <!-- <div class="col s6 push-s6 m6 cocktail1">
+    <div class="container recipes">
+      <div id="cocktail"></div>
+      <!-- <div class="col s6 push-s6 m6 cocktail1">
             <div class="card large">
               <div class="card-image">
                 <img class="result-img" src="./images/2drinks.jpg" />
@@ -89,8 +89,8 @@
               </div>
             </div>
           </div> -->
-        
-          <!-- <div class="col s6 push-s6 m6 cocktail2">
+
+      <!-- <div class="col s6 push-s6 m6 cocktail2">
             <div class="card large">
               <div class="card-image">
                 <img class="result-img" src="./images/2drinks.jpg" />
