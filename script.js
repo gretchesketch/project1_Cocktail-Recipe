@@ -24,12 +24,12 @@ async function cycle() {
 }
 cycle();
 
-  console.log("after carousel")
+console.log("after carousel");
 
 var cockTails = document.querySelector("ul");
 var searchBtn = document.querySelector("searchbtn");
 
-  console.log("after vars on line 28 and 29")
+console.log("after vars on line 28 and 29");
 
 const searchResultsArray = [
   {
@@ -37,45 +37,40 @@ const searchResultsArray = [
     Cocktail: "",
     ingredients: "brown",
     favorite: 8,
-    pictureUrl:
-    "./images/2drinks.jpg,",
-    imageAlt: "your favorite cocktail"
+    pictureUrl: "./images/2drinks.jpg,",
+    imageAlt: "your favorite cocktail",
   },
   {
     id: 2,
     Cocktail: "",
-   ingredients: "brown",
+    ingredients: "brown",
     favorite: 8,
-    pictureUrl:
-      "./images/2drinks.jpg,",
-    imageAlt: "your favorite cocktail"
+    pictureUrl: "./images/2drinks.jpg,",
+    imageAlt: "your favorite cocktail",
   },
   {
     id: 3,
-   Cocktail: "",
+    Cocktail: "",
     ingredients: "brown",
     favorite: 8,
-    pictureUrl:"./images/2drinks.jpg",
-    imageAlt: "your favorite cocktail"
+    pictureUrl: "./images/2drinks.jpg",
+    imageAlt: "your favorite cocktail",
   },
   {
     id: 4,
     Cocktail: "",
     ingredients: "brown",
     favorite: 8,
-    pictureUrl:"./images/2drinks.jpg,",
-    imageAlt: "your favorite cocktail"
-  }
+    pictureUrl: "./images/2drinks.jpg,",
+    imageAlt: "your favorite cocktail",
+  },
 ];
-
-<<<<<<< HEAD
-
 
 // function to fetch api
 // function getApi(event) {
 //   var requestUrl = "https://www.thecocktaildb.com/api/json/v2/9973533/recent.php";
-  // var apikey = '9973533'
-  
+// var apikey = '9973533'
+
 //   fetch(requestUrl)
 //     .then(function (response) {
 //         return response.json();
@@ -90,21 +85,30 @@ const searchResultsArray = [
 
 //   event.preventDefault();
 //   document.getElementById('img').style.display = 'none';
-// }; 
-
+// };
 
 //searchBtn.addEventListener("click", jason);
 
-=======
->>>>>>> d5cfd053b569182ee9a7cf6791e0dac150e2bbc2
+console.log("after search results array");
 
-console.log("after search results array")
+function changeIcon() {
+  if (document.getElementById("favbtn").textContent == "favorite_border")
+    document.getElementById("favbtn").textContent = "favorite";
+  else if ((document.getElementById("favbtn").textContent = "favorite"))
+    document.getElementById("favbtn").textContent = "favorite_border";
+}
 
+$(document).ready(function () {
+  $("#favbtn").on("click", function () {
+    localStorage.setItem("Favorites", $("#cocktail-name"));
+    localStorage.getItem("Favorites");
+  });
+});
 /////////////////////////////////////////////////////////////////////
 //Gretchen experiementing with fetch
 
 // var googleApiKey = (AIzaSyAHn5BUjeKUprcZG2E8m24ynnZIT2avTPk)
-// var googleUrl = 
+// var googleUrl =
 
 // function jason(event) {
 //   event.preventDefault();
@@ -114,69 +118,60 @@ console.log("after search results array")
 var baseUrl = "https://www.thecocktaildb.com/api/json/v2/9973533/";
 var apiKey = "9973533";
 
-var searchInput = document.getElementsByClassName("input")
-var searchBtn = document.getElementsByClassName("searchBtn")
+var searchInput = document.getElementsByClassName("input");
+var searchBtn = document.getElementsByClassName("searchBtn");
 
-var glass = document.getElementById("glass")
-var ingredients = document.getElementById("ingred")
-var instructions = document.getElementById("instruct")
+var glass = document.getElementById("glass");
+var ingredients = document.getElementById("ingred");
+var instructions = document.getElementById("instruct");
 
-var glass = strGlass.glass
-var instructions = strInstructionsDE.instructions
+var glass = strGlass.glass;
+var instructions = strInstructionsDE.instructions;
 var ingredients = [
-    {strIngredient1},
-    {strIngredient2},
-    {strIngredient3},
-    {strIngredient4},
-    {strIngredient5},
-    {strIngredient6},
-    {strIngredient7},
-    {strIngredient8}
- ];
-
-
-
-
-
+  { strIngredient1 },
+  { strIngredient2 },
+  { strIngredient3 },
+  { strIngredient4 },
+  { strIngredient5 },
+  { strIngredient6 },
+  { strIngredient7 },
+  { strIngredient8 },
+];
 
 //fetching random cocktail
 // this is just a sample currently: revise later
-searchBtn.addEventListener("submit", fetch("https://www.thecocktaildb.com/api/json/v2/9973533/random.php ")
-.then((response) => {
-    if (response.ok) {
+searchBtn.addEventListener(
+  "submit",
+  fetch("https://www.thecocktaildb.com/api/json/v2/9973533/random.php ")
+    .then((response) => {
+      if (response.ok) {
         return response.json();
-    } else {
+      } else {
         throw new Error("NETWORK RESPONSE ERROR");
-    }
-})
-.then(data => {
-  console.log(data);
-  displayCocktail(data)
-})
+      }
+    })
+    .then((data) => {
+      console.log(data);
+      displayCocktail(data);
+    })
 
-  .catch((error) => console.error("FETCH ERROR:", error)));
+    .catch((error) => console.error("FETCH ERROR:", error))
+);
 
-  
-  
-  
-  
-  //display function
-  function displayCocktail(data) {
-    const cocktail = data.drinks[2];
-    const cocktailDiv = document.getElementById("cocktail"); 
-  };
+//display function
+function displayCocktail(data) {
+  const cocktail = data.drinks[2];
+  const cocktailDiv = document.getElementById("cocktail");
+}
 
-  //exporting data
+//exporting data
 // const cocktailName = cockTails.strDrink;
 // drinkname.innerHTML = cocktailName;
 // cocktailDiv.appendChild(span);
 
-
-
-
 //looping through ingredients to display on the slots that are not null
 // const cocktailIngredients = document.createElement("ul");
-// cocktailDiv.appendChild(cocktailIngredients);  
+// cocktailDiv.appendChild(cocktailIngredients);
 
 // const getIngredients = Object.keys(cocktail)
 //   .filter(function (ingredient) {
@@ -196,15 +191,7 @@ searchBtn.addEventListener("submit", fetch("https://www.thecocktaildb.com/api/js
 //   cocktailIngredients.appendChild(listItem);
 // }
 
-
-
-
-
-
-
-
-
-  //drink charactersists that showed up in the console
+//drink charactersists that showed up in the console
 // idDrink: "12528"
 // strAlcoholic: "Alcoholic"
 // strCategory: "Ordinary Drink"
@@ -256,8 +243,14 @@ searchBtn.addEventListener("submit", fetch("https://www.thecocktaildb.com/api/js
 // strTags: null
 // strVideo: null
 
-function changeIcon() {
-  if (document.getElementById('favbtn').textContent == 'favorite_border') document.getElementById('favbtn').textContent = 'favorite';
-  else if (document.getElementById('favbtn').textContent = 'favorite') document.getElementById('favbtn').textContent = 'favorite_border';
-};
+// function to save favorites into local storage
 
+// function to change favorite icon when
+
+// function changeIcon() {
+//   if (document.getElementById('favbtn').textContent == 'favorite_border') {
+//     $('#favbtn').html('<i class="material-icons left" id="favbtn">favorite</i>');
+//   } else {
+//     $('#favbtn').html('<i class="material-icons left" id="favbtn">favorite_border</i>');
+//   }
+// };
