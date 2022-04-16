@@ -1,3 +1,7 @@
+fetch("https://www.thecocktaildb.com/api/json/v2/9973533/random.php")
+    .then((response) => response.json())
+    .then((data) => console.log(data));
+
 // images display on landing page
 const img = document.querySelector(".carousel-img");
 const cycleImages = [
@@ -27,7 +31,6 @@ cycle();
 console.log("after carousel");
 
 var cockTails = document.querySelector("ul");
-var searchBtn = document.querySelector("searchbtn");
 
 console.log("after vars on line 28 and 29");
 
