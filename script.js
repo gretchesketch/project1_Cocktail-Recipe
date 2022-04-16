@@ -65,9 +65,24 @@ const searchResultsArray = [
   },
 ];
 
+
 console.log("after search results array");
 
+function changeIcon() {
+  if (document.getElementById("favbtn").textContent == "favorite_border")
+    document.getElementById("favbtn").textContent = "favorite";
+  else if ((document.getElementById("favbtn").textContent = "favorite"))
+    document.getElementById("favbtn").textContent = "favorite_border";
+}
+
+$(document).ready(function () {
+  $("#favbtn").on("click", function () {
+    localStorage.setItem("Favorites", $("#cocktail-name"));
+    localStorage.getItem("Favorites");
+  });
+});
 /////////////////////////////////////////////////////////////////////
+
 
 var baseUrl = "https://www.thecocktaildb.com/api/json/v2/9973533/";
 var apiKey = "9973533";
@@ -79,41 +94,13 @@ var glass = document.getElementById("glass");
 var ingredients = document.getElementById("ingred");
 var instructions = document.getElementById("instruct");
 
-// var glass = [strGlass];
-// var instructions = strInstructionsDE.instructions
-// var ingredients = [
-//     {strIngredient1},
-//     {strIngredient2},
-//     {strIngredient3},
-//     {strIngredient4},
-//     {strIngredient5},
-//     {strIngredient6},
-//     {strIngredient7},
-//     {strIngredient8}
-//  ];
 
-console.log(searchBtn);
-//fetching random cocktail
-searchBtn.addEventListener("click", displayCocktail);
-
-//display function
-function displayCocktail(event) {
-    console.log(event)
-    event.preventDefault()
+searchBtn.addEventListener("click", function(event) {
+  event.preventDefault();
   fetch("https://www.thecocktaildb.com/api/json/v2/9973533/random.php")
     .then((response) => response.json())
-    .then((data) => {
-        const cocktails = data.drinks;
-        console.log("cocktails:", cocktails);
-        return;
-    })
-};
+    .then((data) => console.log(data));
+});
  
 
 
-function changeIcon() {
-  if (document.getElementById("favbtn").textContent == "favorite_border")
-    document.getElementById("favbtn").textContent = "favorite";
-  else if ((document.getElementById("favbtn").textContent = "favorite"))
-    document.getElementById("favbtn").textContent = "favorite_border";
-};
