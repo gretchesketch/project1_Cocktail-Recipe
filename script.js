@@ -142,17 +142,16 @@ searchBtn.addEventListener("click", function (event) {
 function displayCocktail(data) {
   const cocktail = data.drinks[0];
   const cocktailDiv = document.getElementById("cocktail");
-  cocktailDiv.innerHTML = "";
+  cocktailDiv.innerText = "";
   const cocktailName = cocktail.strDrink;
   const heading = document.createElement("h3");
-  heading.innerHTML = cocktailName;
+  heading.innerText = cocktailName;
   cocktailDiv.appendChild(heading);
   const cocktailImg = document.createElement("img");
   cocktailImg.src = cocktail.strDrinkThumb;
   cocktailDiv.appendChild(cocktailImg);
   const cocktailIngredients = document.createElement("dl");
   cocktailDiv.appendChild(cocktailIngredients);
-  const cocktailMeasures = document.createElement;
   const getIngredients = Object.keys(cocktail)
 
     .filter(function (ingredient) {
@@ -170,17 +169,19 @@ function displayCocktail(data) {
     listItem = document.createElement("dt");
     listItem.innerHTML = value;
     cocktailIngredients.appendChild(listItem);
-  }
-  var cocktailEl = document.getElementById("cocktail1");
+
+    var cocktailEl = document.getElementById("cocktail1");
   var str1 = `
   <div class="card large"> 
+  <img src="cocktailImg">
   <div class="card-content">
+  <h3>${cocktailName}</h3>
   <dl>
     <dt>Type of Glass:</dt>
     <dd id="glass1">${data.drinks[0].strGlass}</dd>
     <dt>Ingredients:</dt>
     <dd id="ingred1"></dd>
-    <dt>
+    <dl>ingredients</dl>
     <dt>Instruction:</dt>
     <dd id="instruct1">${data.drinks[0].strInstructions}</dd>
   </dl>
@@ -193,4 +194,4 @@ function displayCocktail(data) {
 </div>
 </div> `;
   cocktailEl.innerHTML = str1;
-}
+}};

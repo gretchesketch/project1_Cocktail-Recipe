@@ -103,7 +103,7 @@ footer {
   border: 4px solid #90f287;
   border-radius: 5px;
 }
-#cocktail h3 {
+#cocktail h3 dt {
   margin: 0 0 15px 0;
   text-transform: uppercase;
 }
