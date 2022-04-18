@@ -1,80 +1,83 @@
-@import url('https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Oswald:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Oswald:wght@300&display=swap");
 
 /* * {
     text-align: center;
 } */
 
 .mc {
-    color: #F66867;
+  color: #f66867;
 }
 
 .sc {
-    color: #4a8d0c;
-    
+  color: #4a8d0c;
 }
 
 body {
-    background-image: linear-gradient(315deg, #3D93DD 0%, rgb(188, 224, 213) 100%);
+  background-image: linear-gradient(
+    315deg,
+    #3d93dd 0%,
+    rgb(188, 224, 213) 100%
+  );
 }
 
 .title {
-    font-family: 'Beau Rivage', sans-serif;
-    font-size: 200px;
-    color: #129c57;
-    text-align: center;
+  font-family: "Beau Rivage", sans-serif;
+  font-size: 200px;
+  color: #129c57;
+  text-align: center;
 }
 
 .git {
-    color: white;
+  color: white;
 }
 
 .description {
-    font-family: 'Oswald', sans-serif;
-    text-align: center;
+  font-family: "Oswald", sans-serif;
+  text-align: center;
 }
 
 .input,
-.form,
+.cocktail-form,
 .results,
 .card-action,
 footer {
-    text-align: center;
+  text-align: center;
 }
 
 .input::placeholder {
-    color: #4a8d0c;
-}
-
-.searchbtn {
-    background-color:#fff;
+  color: #4a8d0c;
 }
 
 .searchbtn:hover {
-    background-image: linear-gradient(315deg, #3D93DD 0%, rgb(205, 225, 236) 100%);
+  background-image: linear-gradient(
+    315deg,
+    #3d93dd 0%,
+    rgb(205, 225, 236) 100%
+  );
 }
 
-.img {
-    width: 550px;
-    height: 650px;
-    border-radius: 10%;
-    box-shadow: 10px 5px 5px #F66867;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+.carousel-img {
+  width: 550px;
+  height: 650px;
+  border-radius: 10%;
+  box-shadow: 10px 5px 5px #f66867;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .results {
-    font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
 }
 
 .recipes {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1em;
 }
 
 .result-img {
-    height: 200px;
+  height: 200px;
 }
 
 /* #cocktail-name {
@@ -82,9 +85,42 @@ footer {
 } */
 
 .card-content {
-    text-align: left;
+  text-align: left;
 }
 
 .favbtn {
-    background-color: #fc5c5c;
+  background-color: #fc5c5c;
+}
+
+/*  */
+
+#cocktail {
+  max-width: 350px;
+  text-align: center;
+  padding: 30px 30px 12px 30px;
+  color: #fff;
+  background-color: #5db708;
+  border: 4px solid #90f287;
+  border-radius: 5px;
+}
+#cocktail h3 {
+  margin: 0 0 15px 0;
+  text-transform: uppercase;
+}
+#cocktail img {
+  max-width: 300px;
+  border: 6px solid #fff;
+  border-radius: 150px;
+}
+#cocktail dl {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#cocktail dt {
+  padding: 15px 0;
+  font-size: 18px;
+}
+#cocktail dt:not(:last-of-type) {
+  border-bottom: 1px solid #fff;
 }
