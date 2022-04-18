@@ -79,7 +79,7 @@ const searchResultsArray = [
 //       .then(function (data) {
 //           for (var i = 0; i < data.length; i++) {
 //               var listItem = document.createElement("li");
-//               listItem.textContent = data[i].html_url;
+//               listItem.textContent = data[i].html_url;i
 //               cockTails.appendChild(listItem);
 //             }
 //         });
@@ -111,10 +111,15 @@ var glass = document.getElementById("glass")
 var ingredients = document.getElementById("ingred")
 var instructions = document.getElementById("instruct")
 
-var glass = strGlass.glass
-var temp = day.temp.day;
-var windSpeed = day.wind_speed;
-var humidity = day.humidity;
+//var glass = strGlass.glass
+//var temp = day.temp.day;
+//var windSpeed = day.wind_speed;
+//var humidity = day.humidity;
+
+// in order to have the api only called on during a search we need to add an event listener to the search button
+// create a variale to save the input value create another variable for your search button element.
+// add an event listener to the variable created to trigger the search button to call the api. 
+
 
 
 //fetching random cocktail
@@ -122,6 +127,7 @@ var humidity = day.humidity;
 fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
   .then((response) => {
     if (response.ok) {
+      console.log(response)
       return response.json();
     } else {
       throw new Error("NETWORK RESPONSE ERROR");
