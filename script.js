@@ -120,7 +120,11 @@ var cocktailSearch = document.querySelector("cocktailSearch"); // input value fr
 //////////////////
 searchBtn.addEventListener("click", function (event) {
   event.preventDefault();
-  fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php/")
+  var userSearch = document.getElementById("cocktailSearch").value;
+  console.log(userSearch);
+  fetch(
+    `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${userSearch}`
+  )
     .then((response) => {
       if (response.ok) {
         return response.json();
@@ -138,6 +142,7 @@ searchBtn.addEventListener("click", function (event) {
 function displayCocktail(data) {
   const cocktail = data.drinks[0];
   const cocktailDiv = document.getElementById("cocktail");
+  cocktailDiv.innerHTML = "";
   const cocktailName = cocktail.strDrink;
   const heading = document.createElement("h3");
   heading.innerHTML = cocktailName;
@@ -166,4 +171,26 @@ function displayCocktail(data) {
     listItem.innerHTML = value;
     cocktailIngredients.appendChild(listItem);
   }
+  var cocktailEl = document.getElementById("cocktail1");
+  var str1 = `
+  <div class="card large"> 
+  <div class="card-content">
+  <dl>
+    <dt>Type of Glass:</dt>
+    <dd id="glass1">${data.drinks[0].strGlass}</dd>
+    <dt>Ingredients:</dt>
+    <dd id="ingred1"></dd>
+    <dt>
+    <dt>Instruction:</dt>
+    <dd id="instruct1">${data.drinks[0].strInstructions}</dd>
+  </dl>
+</div>
+<div class="card-action">
+  <a class="waves-effect waves-light btn favbtn"
+    ><i onclick="changeIcon()" class="material-icons left" id='favbtn'>favorite_border</i>Favorite</a
+  >
+</div>
+</div>
+</div> `;
+  cocktailEl.innerHTML = str1;
 }
