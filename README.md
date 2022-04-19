@@ -15,9 +15,9 @@
 
 
 ## General Information
-- The purpose of the project is to utilize all of the skills we have learned in the first 7 weeks of this course and showcase it through one solid application.
+- The purpose of the project is to utilize all of the skills we have learned in the first 7 weeks of this course and showcase it through one solid an user friendly       application.
 - Collectively we chose this project to create an app for entertainers, bartenders, and anyone looking to create the perfect drink for the perfect occassion.
-- With ease Git Coctail allows you to search the perfect cocktail and retrieve the ingredients needed to make that cocktail
+- With ease Git Coctail allows you to search the perfect cocktail and retrieve the ingredients needed to make that cocktail.
 
 
 ## Diployed Link
@@ -43,7 +43,7 @@
 
 ## Project Requirements
 
-You and your group will use everything you’ve learned over the past six modules to create a real-world front-end application that you’ll be able to showcase to potential employers. The user story and acceptance criteria will depend on the project that you create, but your project must fulfil the following requirements:
+You and your group will use everything you’ve learned over the past six modules to create a real-world front-end application that you’ll be able to showcase to potential employers. Your project must fulfil the following requirements:
 
 -  Use a CSS framework other than Bootstrap.
 -  Be deployed to GitHub Pages.
@@ -66,9 +66,10 @@ Project is: _in progress_
 
 Room for improvement:
 - We feel we could improve the styling and user interface of our application.
+- We would like to make it so you can hit the entire favorite button to save instead of just the heart.  
 
 To do:
-- We would like to utilize additional API's to render more search options 
+- We would also like to utilize additional API's to render more search options 
 
 ## Contact
 Created by:
