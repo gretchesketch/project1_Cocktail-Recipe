@@ -92,7 +92,6 @@ footer {
   background-color: #fc5c5c;
 }
 
-
 #cocktail {
   max-width: 400px;
   text-align: center;
@@ -134,9 +133,8 @@ footer {
 
 dd {
   background-color: #5db708;
-  color:#fff;
+  color: #fff;
 }
-
 
 #cocktail1 {
   max-height: 1000px;
@@ -152,7 +150,9 @@ dd {
   background-color: #5db708;
 }
 
-#cardTwo {
+
+#cardImg {
+  display: flex;
   justify-content: center;
   align-items: center;
   max-width: 250px;
