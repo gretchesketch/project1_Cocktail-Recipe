@@ -1,19 +1,18 @@
 # Git Cocktail
 > Git Cocktail is an interactive front end application that allows users to enter the name of a cocktial and receive information on that cocktail fetched from an API. 
 
-
 ## Table of Contents
 * [General Info](#general-information)
 * [Technologies Used](#technologies-used)
 * [Features](#features)
-* [Screenshots](#screenshots)
+* [Screenshot](#screenshot)
 * [Setup](#setup)
 * [Usage](#usage)
 * [Project Status](#project-status)
 * [Room for Improvement](#room-for-improvement)
 * [Acknowledgements](#acknowledgements)
 * [Contact](#contact)
-<!-- * [License](#license) -->
+* [License](#license)
 
 
 ## General Information
@@ -35,7 +34,7 @@
 - Awesome feature 3
 
 
-## Screensho
+## Screenshot
 ![image](https://user-images.githubusercontent.com/97489289/163904805-377b3a27-e7eb-48c4-a308-d2caf576da6a.png)
 
 
@@ -53,7 +52,7 @@ Provide various use cases and code examples here.
 
 
 ## Project Status
-Project is: _in progress_ / _complete_ / _no longer being worked on_. If you are no longer working on it, provide reasons why.
+Project is: _in progress_ 
 
 
 ## Room for Improvement
@@ -76,14 +75,18 @@ Give credit here.
 
 
 ## Contact
-Created by [@flynerdpl](https://www.flynerd.pl/) - feel free to contact me!
+Created by:
+- https://github.com/gretchesketch - feel free to contact me!
+- https://github.com/jasonchun7 - feel free to contact me!
+- https://github.com/coding26fig - feel free to contact me!
+- https://github.com/BryantHunter10 - feel free to contact me!
 
 
-<!-- Optional -->
-<!-- ## License -->
-<!-- This project is open source and available under the [... License](). -->
+## License 
+This project is not yet licensed.
 
-<!-- You don't have to include all sections - just the one's relevant to your project -->
+
+
 
 
 
