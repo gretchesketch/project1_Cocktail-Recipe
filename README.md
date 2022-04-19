@@ -1,4 +1,4 @@
-# Git Cocktail
+# Git *Cocktail
 > Git Cocktail is an interactive front end application that allows users to enter the name of a cocktial and receive information on that cocktail fetched from an API. 
 
 ## Table of Contents
