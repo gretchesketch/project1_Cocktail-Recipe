@@ -107,14 +107,10 @@ searchBtn.addEventListener("click", function (event) {
     })
     .catch((error) => console.error("FETCH ERROR:", error));
 });
-<<<<<<< HEAD
-// display cards
-function displayCocktail(data) { // 9:01pm
-=======
+
 // display card one.
 // Gets the data from the drink index
 function displayCocktail(data) {
->>>>>>> df9778c7c6c29a01d2c286328a909c3282aba857
   const cocktail = data.drinks[0];
   const cocktailDiv = document.getElementById("cocktail");
   cocktailDiv.innerText = "";
@@ -155,26 +151,26 @@ function displayCocktail(data) {
   var cocktailEl = document.getElementById("cocktail1");
   var str1 = `
   <div class="col s6 push-s6 m6">
-  <div class="card large"> 
-  <h3>${cocktailName}</h3>
-  <img id="cardImg" src="${cocktailImg.src}">
-  <div class="card-content">
-  <dl>
-    <dt>Type of Glass:</dt>
-    <dd>${data.drinks[0].strGlass}</dd>
-    <dt>Ingredients:</dt>
-    <dd>${data.drinks[0].strIngredient1}</dd>
-    <dt>Measurements:</dt>
-    <dd></dd>
-    <dt>Instruction:</dt>
-    <dd>${data.drinks[0].strInstructions}</dd>
-  </dl>
-</div>
-<div class="card-action">
-  <a class="waves-effect waves-light btn favbtn">
-  <i onclick="changeIcon()" class="material-icons left" id='favbtn'>favorite_border</i>Favorite</a>
-</div>
-</div>
+   <div class="card large"> 
+    <h3>${cocktailName}</h3>
+    <img id="cardImg" src="${cocktailImg.src}">
+    <div class="card-content">
+      <dl>
+        <dt>Type of Glass:</dt>
+          <dd>${data.drinks[0].strGlass}</dd>
+        <dt>Ingredients:</dt>
+        <dd>${data.drinks[0].strIngredient1}</dd>
+        <dt>Measurements:</dt>
+        <dd></dd>
+        <dt>Instruction:</dt>
+        <dd>${data.drinks[0].strInstructions}</dd>
+      </dl>
+    </div>
+    <div class="card-action">
+      <a class="waves-effect waves-light btn favbtn">
+        <i onclick="changeIcon()" class="material-icons left" id='favbtn'>favorite_border</i>Favorite</a>
+    </div>
+  </div>
 </div> 
 </div>`;
   cocktailEl.innerHTML = str1;

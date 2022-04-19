@@ -10,13 +10,12 @@ function renderFavorites(){
             <div class="card-content">
             <h3>${favoritesArr[i].strDrink}</h3>
             </div>
-            
+
             <div class="card-action">
             <a class="waves-effect waves-light btn favbtn"
             ><i onclick="changeIcon()" class="material-icons left" id='favbtn'>favorite_border</i>Favorite</a
             >
-            </div>
-            </div>
+            </div>            
             </div> `;
             
     }
