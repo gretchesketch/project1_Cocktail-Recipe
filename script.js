@@ -24,42 +24,7 @@ async function cycle() {
   cycle();
 }
 cycle();
-console.log("after carousel");
-console.log("after vars on line 28 and 29");
-const searchResultsArray = [
-  {
-    id: 1,
-    Cocktail: "",
-    ingredients: "brown",
-    favorite: 8,
-    pictureUrl: "./images/2drinks.jpg,",
-    imageAlt: "your favorite cocktail",
-  },
-  {
-    id: 2,
-    Cocktail: "",
-    ingredients: "brown",
-    favorite: 8,
-    pictureUrl: "./images/2drinks.jpg,",
-    imageAlt: "your favorite cocktail",
-  },
-  {
-    id: 3,
-    Cocktail: "",
-    ingredients: "brown",
-    favorite: 8,
-    pictureUrl: "./images/2drinks.jpg",
-    imageAlt: "your favorite cocktail",
-  },
-  {
-    id: 4,
-    Cocktail: "",
-    ingredients: "brown",
-    favorite: 8,
-    pictureUrl: "./images/2drinks.jpg,",
-    imageAlt: "your favorite cocktail",
-  },
-];
+
 console.log("after search results array");
 
 function changeIcon() {
@@ -106,6 +71,7 @@ $(document).ready(function () {
     localStorage.getItem("Favorites");
   });
 });
+
 /////////////////////////////////////////////////////////////////////
 var baseUrl = "https://www.thecocktaildb.com/api/json/v2/9973533/";
 var apiKey = "9973533";
@@ -115,46 +81,13 @@ var glass = document.getElementById("glass");
 var ingredients = document.getElementById("ingred");
 var instructions = document.getElementById("instruct");
 var cocktailSearch = document.querySelector("cocktailSearch"); // input value from user
-// var cocktailContainerEl = document.querySelector('cocktail')
+var searchResult = document.querySelector(".search-results");
+searchResult.style.display = "none";
 
-/////////////////// sample code from activity
-// var formSubmitHandler = function (event) {
-//   event.preventDefault();
-
-//   var cocktailResults = cocktailSearch.value.trim();
-
-//   if (cocktailResults) {
-//     getUserRepos(cocktailResults);
-
-//     cocktailContainerEl.textContent = '';
-//     cocktailSearch.value = '';
-//   } else {
-//     alert('Please enter a Cocktail name');
-//   }
-// };
-
-// var getCocktailRecipes = function (cocktailName) {
-//   var apiUrl = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + cocktailName;
-
-//   fetch(apiUrl)
-//     .then(function (response) {
-//       if (response.ok) {
-//         console.log(response);
-//         response.json().then(function (data) {
-//           console.log(data);
-//           displayRepos(data, cocktailName);
-//         });
-//       } else {
-//         alert('Error: ' + response.statusText);
-//       }
-//     })
-//     .catch(function (error) {
-//       alert('Unable to connect to Database');
-//     });
-// };
-//////////////////
 searchBtn.addEventListener("click", function (event) {
   event.preventDefault();
+  searchResult.style.display = "flex";
+  img.style.display = "none";
   var userSearch = document.getElementById("cocktailSearch").value;
   console.log(userSearch);
   fetch(
@@ -174,8 +107,14 @@ searchBtn.addEventListener("click", function (event) {
     })
     .catch((error) => console.error("FETCH ERROR:", error));
 });
+<<<<<<< HEAD
 // display cards
 function displayCocktail(data) { // 9:01pm
+=======
+// display card one.
+// Gets the data from the drink index
+function displayCocktail(data) {
+>>>>>>> df9778c7c6c29a01d2c286328a909c3282aba857
   const cocktail = data.drinks[0];
   const cocktailDiv = document.getElementById("cocktail");
   cocktailDiv.innerText = "";
@@ -190,9 +129,13 @@ function displayCocktail(data) { // 9:01pm
   cocktailDiv.appendChild(cocktailIngredients);
   const getIngredients = Object.keys(cocktail)
 
+    // the filter method creates an array from an existing array.
+    // In this case the array of drinks
+    //proper syntax: .filter(function(item))
     .filter(function (ingredient) {
       return ingredient.indexOf("strIngredient") == 0;
     })
+    //Only display the ingredients that dont have a value of null
     .reduce(function (ingredients, ingredient) {
       if (cocktail[ingredient] != null) {
         ingredients[ingredient] = cocktail[ingredient];
@@ -205,30 +148,36 @@ function displayCocktail(data) { // 9:01pm
     listItem = document.createElement("dt");
     listItem.innerHTML = value;
     cocktailIngredients.appendChild(listItem);
+  }
 
-    var cocktailEl = document.getElementById("cocktail1");
+  // Display Card two
+  // using inner HTML to display data from the index
+  var cocktailEl = document.getElementById("cocktail1");
   var str1 = `
+  <div class="col s6 push-s6 m6">
   <div class="card large"> 
-  <img src="${cocktailImg}">
-  <div class="card-content">
   <h3>${cocktailName}</h3>
+  <img id="cardImg" src="${cocktailImg.src}">
+  <div class="card-content">
   <dl>
     <dt>Type of Glass:</dt>
-    <dd id="glass1">${data.drinks[0].strGlass}</dd>
+    <dd>${data.drinks[0].strGlass}</dd>
     <dt>Ingredients:</dt>
-    <dd id="ingred1"></dd>
-    <dt>${cocktailIngredients.appendChild(listItem)}</dt>
+    <dd>${data.drinks[0].strIngredient1}</dd>
+    <dt>Measurements:</dt>
+    <dd></dd>
     <dt>Instruction:</dt>
-    <dd id="instruct1">${data.drinks[0].strInstructions}</dd>
+    <dd>${data.drinks[0].strInstructions}</dd>
   </dl>
 </div>
 <div class="card-action">
-  <a class="waves-effect waves-light btn favbtn"
-    ><i onclick="changeIcon()" class="material-icons left" id='favbtn'>favorite_border</i>Favorite</a
-  >
+  <a class="waves-effect waves-light btn favbtn">
+  <i onclick="changeIcon()" class="material-icons left" id='favbtn'>favorite_border</i>Favorite</a>
 </div>
 </div>
-</div> `;
+</div> 
+</div>`;
   cocktailEl.innerHTML = str1;
-}};
+}
 
+const favoritesBar = document.getElementsByClassName("favorites-bar");

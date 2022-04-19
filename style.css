@@ -92,10 +92,8 @@ footer {
   background-color: #fc5c5c;
 }
 
-/*  */
-
 #cocktail {
-  max-width: 350px;
+  max-width: 400px;
   text-align: center;
   padding: 30px 30px 12px 30px;
   color: #fff;
@@ -108,9 +106,11 @@ footer {
   text-transform: uppercase;
 }
 #cocktail img {
-  max-width: 300px;
-  border: 6px solid #fff;
-  border-radius: 150px;
+  justify-content: center;
+  align-items: center;
+  max-width: 250px;
+  border: 6px solid #90f287;
+  border-radius: 10px;
 }
 #cocktail dl {
   list-style: none;
@@ -125,3 +125,37 @@ footer {
   border-bottom: 1px solid #fff;
 }
 
+/* .favorites-bar {
+  background-color: #4a8d0c;
+  border-radius: 10%;
+  border: 4px solid #90f287;
+} */
+
+dd {
+  background-color: #5db708;
+  color: #fff;
+}
+
+#cocktail1 {
+  max-height: 1000px;
+  max-width: 400px;
+  text-align: center;
+  padding: 30px 30px 12px 30px;
+  color: #fff;
+  background-color: #5db708;
+  border: 4px solid #90f287;
+  border-radius: 5px;
+}
+#cocktail1 h3 {
+  background-color: #5db708;
+}
+
+
+#cardImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 250px;
+  border: 6px solid #90f287;
+  border-radius: 10px;
+}
