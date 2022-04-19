@@ -1,9 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Oswald:wght@300&display=swap");
 
-/* * {
-    text-align: center;
-} */
-
 .mc {
   color: #f66867;
 }
@@ -68,6 +64,8 @@ footer {
 
 .results {
   font-family: "Oswald", sans-serif;
+  justify-content: center;
+  align-items: center;
 }
 
 .recipes {
@@ -88,14 +86,9 @@ footer {
   text-align: left;
 }
 
-.favbtn {
-  background-color: #fc5c5c;
-}
-
-/*  */
-
 #cocktail {
-  max-width: 350px;
+  max-height: fit-content;
+  max-width: 400px;
   text-align: center;
   padding: 30px 30px 12px 30px;
   color: #fff;
@@ -108,9 +101,11 @@ footer {
   text-transform: uppercase;
 }
 #cocktail img {
-  max-width: 300px;
-  border: 6px solid #fff;
-  border-radius: 150px;
+  justify-content: center;
+  align-items: center;
+  max-width: 250px;
+  border: 6px solid #90f287;
+  border-radius: 10px;
 }
 #cocktail dl {
   list-style: none;
@@ -123,5 +118,74 @@ footer {
 }
 #cocktail dt:not(:last-of-type) {
   border-bottom: 1px solid #fff;
+}
+
+/* .favorites-bar {
+  background-color: #4a8d0c;
+  border-radius: 10%;
+  border: 4px solid #90f287;
+} */
+
+dd {
+  background-color: #5db708;
+  color: #fff;
+}
+
+#cocktail1 {
+  max-height: fit-content;
+  max-width: 400px;
+  text-align: center;
+  padding: 5px 10px 10px 10px;
+  color: #fff;
+  background-color: #5db708;
+  border: 4px solid #90f287;
+  border-radius: 5px;
+}
+#cocktail1 h3 {
+  background-color: #5db708;
+}
+
+#cardImg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  max-width: 200px;
+  border: 6px solid #90f287;
+  border-radius: 10px;
+}
+
+.card-content {
+  background-color: #5db708;
+}
+
+.large {
+  background-color: #5db708;
+}
+
+.favbtn:hover {
+  background: #47a7f5 radial-gradient(circle, transparent 5%, #f66867 1%)
+  center/15000%;
+}
+.favbtn:active {
+  background-color: #f66867;
+  background-size: 100%;
+  transition: background 0s;
+}
+
+/* Button style */
+.favbtn {
+  background-position: center;
+  background-color: #f66867;
+  transition: background 0.8s;
+  border: none;
+  border-radius: 2px;
+  padding: 5px 18px 5px 18px;
+  font-size: 16px;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: white;
+  box-shadow: 0 0 4px #999;
+  outline: none;
 }
 
