@@ -3,10 +3,10 @@
 
 ## Table of Contents
 * [General Info](#general-information)
+* [Diployed Link](#diployed-link)
 * [Technologies Used](#technologies-used)
 * [Features](#features)
 * [Screenshot](#screenshot)
-* [Setup](#setup)
 * [Usage](#usage)
 * [Project Status](#project-status)
 * [Room for Improvement](#room-for-improvement)
@@ -19,6 +19,10 @@
 - The purpose of the project is to utilize all of the skills we have learned in the first 7 weeks of this course and showcase it through one solid application.
 - Collectively we chose this project to create an app for entertainers, bartenders, and anyone looking to create the perfect drink for the perfect occassion.
 - With ease Git Coctail allows you to search the perfect cocktail and retrieve the ingredients needed to make that cocktail
+
+
+## Diployed Link
+
 
 
 ## Technologies Used
@@ -38,17 +42,8 @@
 ![image](https://user-images.githubusercontent.com/97489289/163904805-377b3a27-e7eb-48c4-a308-d2caf576da6a.png)
 
 
-## Setup
-What are the project requirements/dependencies? Where are they listed? A requirements.txt or a Pipfile.lock file perhaps? Where is it located?
-
-Proceed to describe how to install / setup one's local environment / get started with the project.
-
-
 ## Usage
-How does one go about using it?
-Provide various use cases and code examples here.
 
-`write-your-code-here`
 
 
 ## Project Status
@@ -68,10 +63,10 @@ To do:
 
 
 ## Acknowledgements
-Give credit here.
-- This project was inspired by...
-- This project was based on [this tutorial](https://www.example.com).
-- Many thanks to...
+Many thanks to...
+- js_guy
+- 
+- 
 
 
 ## Contact
