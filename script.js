@@ -80,7 +80,7 @@ var searchBtn = document.getElementById("searchBtn");
 var glass = document.getElementById("glass");
 var ingredients = document.getElementById("ingred");
 var instructions = document.getElementById("instruct");
-var cocktailSearch = document.querySelector("cocktailSearch"); // input value from user
+var cocktailSearch = document.querySelector("cocktailSearch");
 var searchResult = document.querySelector(".search-results");
 searchResult.style.display = "none";
 
@@ -107,14 +107,10 @@ searchBtn.addEventListener("click", function (event) {
     })
     .catch((error) => console.error("FETCH ERROR:", error));
 });
-<<<<<<< HEAD
-// display cards
-function displayCocktail(data) { // 9:01pm
-=======
+
 // display card one.
 // Gets the data from the drink index
 function displayCocktail(data) {
->>>>>>> df9778c7c6c29a01d2c286328a909c3282aba857
   const cocktail = data.drinks[0];
   const cocktailDiv = document.getElementById("cocktail");
   cocktailDiv.innerText = "";

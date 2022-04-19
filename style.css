@@ -1,8 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Oswald:wght@300&display=swap");
 
-/* * {
-    text-align: center;
-} */
 
 .mc {
   color: #f66867;
@@ -93,6 +90,7 @@ footer {
 }
 
 #cocktail {
+  max-height: fit-content;
   max-width: 400px;
   text-align: center;
   padding: 30px 30px 12px 30px;
@@ -137,7 +135,7 @@ dd {
 }
 
 #cocktail1 {
-  max-height: 1000px;
+  max-height: fit-content;
   max-width: 400px;
   text-align: center;
   padding: 30px 30px 12px 30px;
