@@ -80,7 +80,7 @@ var searchBtn = document.getElementById("searchBtn");
 var glass = document.getElementById("glass");
 var ingredients = document.getElementById("ingred");
 var instructions = document.getElementById("instruct");
-var cocktailSearch = document.querySelector("cocktailSearch"); // input value from user
+var cocktailSearch = document.querySelector("cocktailSearch");
 var searchResult = document.querySelector(".search-results");
 searchResult.style.display = "none";
 
