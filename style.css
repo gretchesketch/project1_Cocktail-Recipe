@@ -159,3 +159,7 @@ dd {
   border: 6px solid #90f287;
   border-radius: 10px;
 }
+
+.card-content {
+  background-color: #5db708;
+}
