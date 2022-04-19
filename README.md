@@ -35,9 +35,8 @@
 - Awesome feature 3
 
 
-## Screenshots
-![Example screenshot](./img/screenshot.png)
-<!-- If you have screenshots you'd like to share, include them here. -->
+## Screensho
+![image](https://user-images.githubusercontent.com/97489289/163904805-377b3a27-e7eb-48c4-a308-d2caf576da6a.png)
 
 
 ## Setup
