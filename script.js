@@ -23,8 +23,6 @@ async function cycle() {
 }
 cycle();
 
-
-
 console.log("after search results array");
 function changeIcon() {
   if (document.getElementById("favbtn").textContent == "favorite_border")
@@ -38,6 +36,7 @@ $(document).ready(function () {
     localStorage.getItem("Favorites");
   });
 });
+
 /////////////////////////////////////////////////////////////////////
 var baseUrl = "https://www.thecocktaildb.com/api/json/v2/9973533/";
 var apiKey = "9973533";
@@ -47,9 +46,13 @@ var glass = document.getElementById("glass");
 var ingredients = document.getElementById("ingred");
 var instructions = document.getElementById("instruct");
 var cocktailSearch = document.querySelector("cocktailSearch"); // input value from user
+var searchResult = document.querySelector(".search-results");
+searchResult.style.display = "none";
 
 searchBtn.addEventListener("click", function (event) {
   event.preventDefault();
+  searchResult.style.display = "flex";
+  img.style.display = "none";
   var userSearch = document.getElementById("cocktailSearch").value;
   console.log(userSearch);
   fetch(
@@ -85,9 +88,9 @@ function displayCocktail(data) {
   cocktailDiv.appendChild(cocktailIngredients);
   const getIngredients = Object.keys(cocktail)
 
-// the filter method creates an array from an existing array.
-// In this case the array of drinks
-//proper syntax: .filter(function(item))
+    // the filter method creates an array from an existing array.
+    // In this case the array of drinks
+    //proper syntax: .filter(function(item))
     .filter(function (ingredient) {
       return ingredient.indexOf("strIngredient") == 0;
     })
@@ -104,34 +107,36 @@ function displayCocktail(data) {
     listItem = document.createElement("dt");
     listItem.innerHTML = value;
     cocktailIngredients.appendChild(listItem);
-  };
+  }
 
-    // Display Card two
-    // using inner HTML to display data from the index
-    var cocktailEl = document.getElementById("cocktail1");
+  // Display Card two
+  // using inner HTML to display data from the index
+  var cocktailEl = document.getElementById("cocktail1");
   var str1 = `
+  <div class="col s6 push-s6 m6">
   <div class="card large"> 
   <h3>${cocktailName}</h3>
-  <img id="cardTwo" src="${cocktailImg.src}">
+  <img id="cardImg" src="${cocktailImg.src}">
   <div class="card-content">
   <dl>
     <dt>Type of Glass:</dt>
-    <dd id="glass1">${data.drinks[0].strGlass}</dd>
+    <dd>${data.drinks[0].strGlass}</dd>
     <dt>Ingredients:</dt>
-    <dd id="ingred1"></dd>
-    <dt></dt>
+    <dd>${data.drinks[0].strIngredient1}</dd>
+    <dt>Measurements:</dt>
+    <dd></dd>
     <dt>Instruction:</dt>
-    <dd id="instruct1">${data.drinks[0].strInstructions}</dd>
+    <dd>${data.drinks[0].strInstructions}</dd>
   </dl>
 </div>
 <div class="card-action">
-  <a class="waves-effect waves-light btn favbtn"
-    ><i onclick="changeIcon()" class="material-icons left" id='favbtn'>favorite_border</i>Favorite</a
-  >
+  <a class="waves-effect waves-light btn favbtn">
+  <i onclick="changeIcon()" class="material-icons left" id='favbtn'>favorite_border</i>Favorite</a>
 </div>
 </div>
-</div> `;
+</div> 
+</div>`;
   cocktailEl.innerHTML = str1;
-};
+}
 
-const favoritesBar = document.getElementsByClassName("favorites-bar")
+const favoritesBar = document.getElementsByClassName("favorites-bar");
