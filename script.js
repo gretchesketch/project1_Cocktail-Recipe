@@ -1,4 +1,6 @@
 // images display on landing page
+
+let currentDrink;
 const img = document.querySelector(".carousel-img");
 const cycleImages = [
   "./images/bluedrink.jpg",
@@ -59,12 +61,45 @@ const searchResultsArray = [
   },
 ];
 console.log("after search results array");
+
 function changeIcon() {
-  if (document.getElementById("favbtn").textContent == "favorite_border")
+  if (document.getElementById("favbtn").textContent == "favorite_border"){
     document.getElementById("favbtn").textContent = "favorite";
-  else if ((document.getElementById("favbtn").textContent = "favorite"))
+  }
+  else if ((document.getElementById("favbtn").textContent = "favorite")){
     document.getElementById("favbtn").textContent = "favorite_border";
+  }
+
+  favorite()
+
 }
+
+
+
+if(!localStorage.getItem('favorites')){
+  localStorage.setItem('favorites', JSON.stringify([]))
+}
+
+function favorite(){
+  let favoriteStorage = JSON.parse(localStorage.getItem('favorites'))
+  let removed = false // if something is deleted it shouldnt save to local
+  for(let i = 0; i < favoriteStorage.length; i++){
+    if(favoriteStorage[i].idDrink === currentDrink.idDrink){
+      favoriteStorage.splice(i,1) // affecting original arrays length
+      localStorage.setItem('favorites', JSON.stringify(favoriteStorage))
+      removed = true
+    }
+  }
+
+  if(!removed){
+    localStorage.setItem('favorites', JSON.stringify([...favoriteStorage,currentDrink]))
+  }
+  console.log('FAVORITE')
+  console.log(JSON.parse(localStorage.getItem('favorites')))
+}
+
+
+
 $(document).ready(function () {
   $("#favbtn").on("click", function () {
     localStorage.setItem("Favorites", $("#cocktail-name"));
@@ -135,11 +170,12 @@ searchBtn.addEventListener("click", function (event) {
     .then((data) => {
       console.log(data);
       displayCocktail(data);
+      currentDrink = data.drinks[0] //only stores first index
     })
     .catch((error) => console.error("FETCH ERROR:", error));
 });
 // display cards
-function displayCocktail(data) {
+function displayCocktail(data) { // 9:01pm
   const cocktail = data.drinks[0];
   const cocktailDiv = document.getElementById("cocktail");
   cocktailDiv.innerText = "";
