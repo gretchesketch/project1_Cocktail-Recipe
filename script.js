@@ -24,6 +24,125 @@ async function cycle() {
 }
 cycle();
 
+
+
+// API functions
+var baseUrl = "https://www.thecocktaildb.com/api/json/v2/9973533/";
+var apiKey = "9973533";
+var searchInput = document.getElementsByClassName("input");
+var searchBtn = document.getElementById("searchBtn");
+var cocktailSearch = document.querySelector("cocktailSearch");
+var searchResult = document.querySelector(".search-results");
+searchResult.style.display = "none";
+
+
+// fetching API
+searchBtn.addEventListener("click", function (event) {
+  event.preventDefault();
+  searchResult.style.display = "block";
+  img.style.display = "none";
+  var userSearch = document.getElementById("cocktailSearch").value;
+  console.log(userSearch);
+  fetch(
+    `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${userSearch}`
+  )
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("NETWORK RESPONSE ERROR");
+      }
+    })
+    .then((data) => {
+      console.log(data);
+      displayCocktail(data);
+      currentDrink = data.drinks; //only stores first index
+    })
+    .catch((error) => console.error("FETCH ERROR:", error));
+});
+
+// display card one.
+// Gets the data from the drink index
+function displayCocktail(data) {
+  // const cocktailDiv = document.getElementById("cocktail");
+  // cocktailDiv.innerText = "";
+  // const heading = document.createElement("h3");
+  // heading.innerText = cocktailName;
+  // cocktailDiv.appendChild(heading);
+  // cocktailDiv.appendChild(cocktailImg);
+  // const cocktailIngredients = document.createElement("dl");
+  // cocktailDiv.appendChild(cocktailIngredients);
+  // const getIngredients = Object.keys(cocktail)
+  
+  // // the filter method creates an array from an existing array.
+  // // In this case the array of drinks
+  // //proper syntax: .filter(function(item))
+  // .filter(function (ingredient) {
+    //   return ingredient.indexOf("strIngredient") == 0;
+    // })
+    // //Only display the ingredients that dont have a value of null
+    // .reduce(function (ingredients, ingredient) {
+      //   if (cocktail[ingredient] != null) {
+        //     ingredients[ingredient] = cocktail[ingredient];
+        //   }
+        //   return ingredients;
+        // }, {});
+        
+        // for (let key in getIngredients) {
+          //   let value = getIngredients[key];
+          //   listItem = document.createElement("dt");
+          //   listItem.innerHTML = value;
+          //   cocktailIngredients.appendChild(listItem);
+          // }
+          
+          // Display Card two
+          // using inner HTML to display data from the index
+          
+          
+  for(var i = 0; i < data.drinks.length; i ++) {
+    var br = ""
+    var j = 0;
+    while(j<8){
+      br += "<br>"
+      j++
+    }
+    
+    console.log(data.drinks)
+    var cocktail = data.drinks[i];
+    var cocktailName = cocktail.strDrink;
+    console.log(cocktailName)
+          var cocktailImg = document.createElement("img");
+          cocktailImg.src = cocktail.strDrinkThumb;
+          var cocktailEl = document.getElementById("cocktail1");
+    
+    console.log(cocktail)
+  var str1 = `
+  <div class="col s6 push-s6 m12">
+  <div class="card large">
+    <h4>${cocktailName}</h4>
+    <img id="cardImg" src="${cocktailImg.src}" />
+    <div class="card-content">
+      <dl>
+        <dt>Type of Glass:</dt>
+        <dd>${data.drinks[i].strGlass}</dd>
+        <dt>Ingredients:</dt>
+        <dd>
+          ${data.drinks[i].strIngredient1}, ${data.drinks[i].strIngredient2}, ${data.drinks[i].strIngredient3}, ${data.drinks[i].strIngredient4}
+        </dd>
+        <dt>Measurements:</dt>
+        <dd>${data.drinks[i].strMeasure1}, ${data.drinks[i].strMeasure2}, ${data.drinks[i].strMeasure3}, ${data.drinks[i].strMeasure4}</dd>
+        <dt>Instruction:</dt>
+        <dd>${data.drinks[i].strInstructions}</dd>
+      </dl>
+    </div>
+    <button class="favbtn">
+      <i onclick="changeIcon()" class="material-icons left" id="favbtn"
+        >favorite_border</i
+      >Favorite
+    </button>
+  </div>
+</div>
+${br}`;
 function changeIcon() {
   if (document.getElementById("favbtn").textContent == "favorite_border") {
     document.getElementById("favbtn").textContent = "favorite";
@@ -66,106 +185,7 @@ $(document).ready(function () {
     localStorage.getItem("Favorites");
   });
 });
-// API functions
-var baseUrl = "https://www.thecocktaildb.com/api/json/v2/9973533/";
-var apiKey = "9973533";
-var searchInput = document.getElementsByClassName("input");
-var searchBtn = document.getElementById("searchBtn");
-var cocktailSearch = document.querySelector("cocktailSearch");
-var searchResult = document.querySelector(".search-results");
-searchResult.style.display = "none";
-
-// fetching API
-searchBtn.addEventListener("click", function (event) {
-  event.preventDefault();
-  searchResult.style.display = "block";
-  img.style.display = "none";
-  var userSearch = document.getElementById("cocktailSearch").value;
-  console.log(userSearch);
-  fetch(
-    `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${userSearch}`
-  )
-    .then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        throw new Error("NETWORK RESPONSE ERROR");
-      }
-    })
-    .then((data) => {
-      console.log(data);
-      displayCocktail(data);
-      currentDrink = data.drinks[0]; //only stores first index
-    })
-    .catch((error) => console.error("FETCH ERROR:", error));
-});
-
-// display card one.
-// Gets the data from the drink index
-function displayCocktail(data) {
-  // const cocktailDiv = document.getElementById("cocktail");
-  // cocktailDiv.innerText = "";
-  // const heading = document.createElement("h3");
-  // heading.innerText = cocktailName;
-  // cocktailDiv.appendChild(heading);
-  // cocktailDiv.appendChild(cocktailImg);
-  // const cocktailIngredients = document.createElement("dl");
-  // cocktailDiv.appendChild(cocktailIngredients);
-  // const getIngredients = Object.keys(cocktail)
-  
-  // // the filter method creates an array from an existing array.
-  // // In this case the array of drinks
-  // //proper syntax: .filter(function(item))
-  // .filter(function (ingredient) {
-    //   return ingredient.indexOf("strIngredient") == 0;
-    // })
-    // //Only display the ingredients that dont have a value of null
-    // .reduce(function (ingredients, ingredient) {
-      //   if (cocktail[ingredient] != null) {
-        //     ingredients[ingredient] = cocktail[ingredient];
-        //   }
-        //   return ingredients;
-        // }, {});
-        
-        // for (let key in getIngredients) {
-          //   let value = getIngredients[key];
-          //   listItem = document.createElement("dt");
-          //   listItem.innerHTML = value;
-          //   cocktailIngredients.appendChild(listItem);
-          // }
-          
-          // Display Card two
-          // using inner HTML to display data from the index
-  const cocktail = data.drinks[0];
-  const cocktailName = cocktail.strDrink;
-  const cocktailImg = document.createElement("img");
-  cocktailImg.src = cocktail.strDrinkThumb;
-  var cocktailEl = document.getElementById("cocktail1");
-  var str1 = `
-  <div class="col s6 push-s6 m6">
-  <div class="card large">
-    <h4>${cocktailName}</h4>
-    <img id="cardImg" src="${cocktailImg.src}" />
-    <div class="card-content">
-      <dl>
-        <dt>Type of Glass:</dt>
-        <dd>${data.drinks[0].strGlass}</dd>
-        <dt>Ingredients:</dt>
-        <dd>
-          ${data.drinks[0].strIngredient1}, ${data.drinks[0].strIngredient2}, ${data.drinks[0].strIngredient3}, ${data.drinks[0].strIngredient4}
-        </dd>
-        <dt>Measurements:</dt>
-        <dd>${data.drinks[0].strMeasure1}, ${data.drinks[0].strMeasure2}, ${data.drinks[0].strMeasure3}, ${data.drinks[0].strMeasure4}</dd>
-        <dt>Instruction:</dt>
-        <dd>${data.drinks[0].strInstructions}</dd>
-      </dl>
-    </div>
-    <button class="favbtn">
-      <i onclick="changeIcon()" class="material-icons left" id="favbtn"
-        >favorite_border</i
-      >Favorite
-    </button>
-  </div>
-</div>`;
-  cocktailEl.innerHTML = str1;
+console.log(str1)
+  cocktailEl.innerHTML += str1;
+}
 }

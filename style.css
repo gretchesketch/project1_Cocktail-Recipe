@@ -137,8 +137,8 @@ dd {
   text-align: center;
   padding: 5px 10px 10px 10px;
   color: #fff;
-  background-color: #5db708;
-  border: 4px solid #90f287;
+  /* background-color: #5db708; */
+  /* border: 4px solid #90f287; */
   border-radius: 5px;
 }
 #cocktail1 h3 {
